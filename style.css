@@ -24,10 +24,12 @@ a {
     text-decoration: none;
 }
 
-button,
-input,
-textarea {
-    font: inherit;
+code {
+    font-family: Consolas, "Courier New", monospace;
+}
+
+strong {
+    font-weight: 700;
 }
 
 
@@ -47,7 +49,7 @@ textarea {
 .eyebrow {
     margin-bottom: 14px;
 
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -77,7 +79,7 @@ h2 {
 }
 
 .section-heading > p {
-    max-width: 380px;
+    max-width: 390px;
 
     color: #666;
     font-size: 15px;
@@ -93,7 +95,8 @@ h2 {
     top: 0;
     z-index: 100;
 
-    background: rgba(247, 247, 245, 0.92);
+    background: rgba(247, 247, 245, 0.94);
+
     border-bottom: 1px solid #deded9;
 
     backdrop-filter: blur(12px);
@@ -120,7 +123,7 @@ h2 {
 .nav {
     display: flex;
     align-items: center;
-    gap: 28px;
+    gap: 25px;
 }
 
 .nav a {
@@ -167,7 +170,7 @@ h2 {
 }
 
 .hero-description {
-    max-width: 570px;
+    max-width: 590px;
 
     margin: 30px 0;
 
@@ -175,32 +178,51 @@ h2 {
     font-size: 17px;
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
 
 /* =====================================================
-   BUTTON
+   BUTTONS
 ===================================================== */
 
-.primary-button {
+.primary-button,
+.secondary-button {
     display: inline-block;
 
-    padding: 15px 24px;
-
-    background: #151515;
-    color: white;
-
-    font-size: 14px;
-    font-weight: 700;
+    padding: 15px 22px;
 
     border-radius: 4px;
+
+    font-size: 13px;
+    font-weight: 700;
 
     transition:
         transform 0.2s ease,
         background 0.2s ease;
 }
 
+.primary-button {
+    background: #151515;
+    color: white;
+}
+
 .primary-button:hover {
     background: #333;
     transform: translateY(-2px);
+}
+
+.secondary-button {
+    background: transparent;
+    border: 1px solid #ccc;
+    color: #555;
+}
+
+.secondary-button:hover {
+    border-color: #888;
 }
 
 
@@ -262,7 +284,7 @@ h2 {
 }
 
 .progress-fill {
-    width: 29%;
+    width: 0%;
     height: 100%;
 
     background: #151515;
@@ -317,6 +339,302 @@ h2 {
 
 
 /* =====================================================
+   BASICS
+===================================================== */
+
+.basics-section {
+    background: #efefeb;
+}
+
+.basics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 16px;
+}
+
+.concept-card {
+    min-height: 430px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid #deded9;
+    border-radius: 7px;
+
+    display: flex;
+    flex-direction: column;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.concept-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+.concept-card.featured {
+    min-height: 520px;
+
+    background: #151515;
+    color: white;
+
+    border-color: #151515;
+}
+
+.concept-number {
+    color: #999;
+    font-size: 12px;
+}
+
+.concept-card.featured .concept-number {
+    color: #777;
+}
+
+.concept-content {
+    margin-top: auto;
+}
+
+.concept-label {
+    margin-bottom: 10px;
+
+    color: #999;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.concept-card.featured .concept-label {
+    color: #777;
+}
+
+.concept-content h3 {
+    margin-bottom: 15px;
+
+    font-size: 32px;
+    letter-spacing: -1px;
+}
+
+.concept-simple {
+    max-width: 520px;
+
+    color: #666;
+    font-size: 15px;
+}
+
+.concept-card.featured .concept-simple {
+    color: #aaa;
+}
+
+.explanation {
+    margin-top: 28px;
+}
+
+.explanation h4 {
+    margin-bottom: 10px;
+
+    font-size: 14px;
+}
+
+.explanation > p {
+    color: #666;
+    font-size: 13px;
+}
+
+.concept-card.featured .explanation > p {
+    color: #aaa;
+}
+
+
+/* =====================================================
+   CODE / EXAMPLE BOX
+===================================================== */
+
+.example-box {
+    margin-top: 20px;
+    padding: 18px;
+
+    background: #f1f1ed;
+
+    border: 1px solid #deded9;
+    border-radius: 5px;
+}
+
+.concept-card.featured .example-box {
+    background: #222;
+    border-color: #333;
+}
+
+.example-box code {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #333;
+
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.concept-card.featured .example-box code {
+    color: #ddd;
+}
+
+.example-box p {
+    color: #666;
+    font-size: 12px;
+}
+
+.concept-card.featured .example-box p {
+    color: #999;
+}
+
+.complexity-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.complexity-list span {
+    padding: 8px 10px;
+
+    background: #222;
+
+    border: 1px solid #333;
+    border-radius: 4px;
+
+    color: #aaa;
+
+    font-size: 11px;
+}
+
+.mini-example {
+    margin-top: 25px;
+    padding: 18px;
+
+    background: #f2f2ee;
+
+    border-radius: 5px;
+}
+
+.mini-example code {
+    color: #444;
+
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+.concept-tip {
+    margin-top: 20px;
+
+    color: #777;
+    font-size: 12px;
+}
+
+.small-note {
+    margin-top: 20px;
+
+    padding: 12px;
+
+    background: #f2f2ee;
+
+    border-left: 3px solid #151515;
+
+    font-size: 12px !important;
+}
+
+
+/* =====================================================
+   LEARNING RULE
+===================================================== */
+
+.learning-rule {
+    margin-top: 30px;
+    padding: 35px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+
+    background: white;
+
+    border: 1px solid #deded9;
+    border-radius: 7px;
+}
+
+.learning-rule h3 {
+    font-size: 28px;
+    letter-spacing: -1px;
+}
+
+.learning-rule > p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   FLOW
+===================================================== */
+
+.flow-section {
+    background: #f7f7f5;
+}
+
+.flow-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #deded9;
+    border-left: 1px solid #deded9;
+}
+
+.flow-card {
+    min-height: 220px;
+
+    padding: 28px;
+
+    border-right: 1px solid #deded9;
+    border-bottom: 1px solid #deded9;
+
+    background: white;
+}
+
+.flow-card span {
+    display: block;
+
+    margin-bottom: 50px;
+
+    color: #999;
+
+    font-size: 11px;
+}
+
+.flow-card h3 {
+    margin-bottom: 10px;
+
+    font-size: 23px;
+}
+
+.flow-card p {
+    max-width: 270px;
+
+    color: #777;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
    SYLLABUS
 ===================================================== */
 
@@ -328,7 +646,7 @@ h2 {
 }
 
 .topic-card {
-    min-height: 220px;
+    min-height: 250px;
 
     padding: 26px;
 
@@ -339,7 +657,7 @@ h2 {
 
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 20px;
 
     transition:
         transform 0.2s ease,
@@ -372,6 +690,16 @@ h2 {
     margin-top: auto;
 }
 
+.topic-status {
+    margin-bottom: 7px;
+
+    color: #999;
+
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
 .topic-content h3 {
     margin-bottom: 8px;
 
@@ -379,8 +707,8 @@ h2 {
     letter-spacing: -0.5px;
 }
 
-.topic-content p {
-    min-height: 50px;
+.topic-content > p:not(.topic-status) {
+    min-height: 62px;
 
     color: #777;
     font-size: 13px;
@@ -390,7 +718,7 @@ h2 {
     display: flex;
     justify-content: space-between;
 
-    margin-top: 20px;
+    margin-top: 18px;
 
     color: #777;
     font-size: 11px;
@@ -406,6 +734,7 @@ h2 {
 
 .small-progress div {
     height: 100%;
+
     background: #151515;
 }
 
@@ -461,7 +790,7 @@ h2 {
 }
 
 .pattern-card p {
-    max-width: 260px;
+    max-width: 280px;
 
     color: #999;
 
@@ -500,17 +829,13 @@ h2 {
     border: 1px solid #ccc;
     border-radius: 50%;
 
-    font-size: 12px;
+    color: #777;
+
+    font-size: 10px;
 }
 
-.problem-status.solved {
-    background: #151515;
-    color: white;
-    border-color: #151515;
-}
-
-.problem-status.attempted {
-    background: #eee;
+.problem-status.pending {
+    background: white;
 }
 
 .problem-info h3 {
@@ -617,6 +942,7 @@ h2 {
 
 .revision-item h4 {
     margin-bottom: 3px;
+
     font-size: 14px;
 }
 
@@ -652,7 +978,7 @@ h2 {
     color: #777;
 }
 
-.mistake-box p {
+.mistake-box > div:first-child > p:last-child {
     max-width: 450px;
 
     margin-top: 25px;
@@ -688,6 +1014,8 @@ h2 {
 .mistake-example > p {
     margin-top: 15px;
 
+    color: #999;
+
     font-size: 13px;
 }
 
@@ -709,6 +1037,29 @@ h2 {
 
 .mistake-footer strong {
     font-weight: 500;
+}
+
+
+/* =====================================================
+   FINAL SECTION
+===================================================== */
+
+.final-section {
+    padding: 140px 0;
+}
+
+.final-section h2 {
+    max-width: 800px;
+}
+
+.final-description {
+    max-width: 550px;
+
+    margin-top: 30px;
+
+    color: #666;
+
+    font-size: 17px;
 }
 
 
@@ -737,7 +1088,7 @@ h2 {
 
 
 /* =====================================================
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ===================================================== */
 
 @media (max-width: 900px) {
@@ -753,6 +1104,19 @@ h2 {
 
     .hero h1 {
         letter-spacing: -4px;
+    }
+
+    .basics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .learning-rule {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .flow-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .syllabus-grid {
@@ -775,6 +1139,10 @@ h2 {
 }
 
 
+/* =====================================================
+   RESPONSIVE — MOBILE
+===================================================== */
+
 @media (max-width: 600px) {
 
     .container {
@@ -792,6 +1160,16 @@ h2 {
     .hero h1 {
         font-size: 55px;
         letter-spacing: -3px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .primary-button,
+    .secondary-button {
+        text-align: center;
     }
 
     .section-heading {
@@ -814,13 +1192,25 @@ h2 {
         border-bottom: 1px solid #deded9;
     }
 
+    .basics-grid,
+    .flow-grid,
     .syllabus-grid,
     .pattern-grid {
         grid-template-columns: 1fr;
     }
 
+    .concept-card,
+    .concept-card.featured {
+        min-height: auto;
+    }
+
+    .complexity-list {
+        grid-template-columns: 1fr;
+    }
+
     .problem-row {
         grid-template-columns: 35px 1fr;
+
         padding: 20px 0;
     }
 
@@ -839,4 +1229,581 @@ h2 {
     .footer-content > p {
         margin-top: 25px;
     }
+
+    .final-section {
+        padding: 90px 0;
+    }
+
+}
+
+/* =========================================================
+   FOUNDATION PAGE
+   ========================================================= */
+
+.foundation-page {
+    background: var(--background);
+}
+
+/* ---------- Foundation Hero ---------- */
+
+.foundation-hero {
+    padding: 90px 0 70px;
+    border-bottom: 1px solid var(--border);
+}
+
+.foundation-hero__content {
+    max-width: 850px;
+}
+
+.foundation-hero h1 {
+    margin: 14px 0 20px;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+}
+
+.foundation-hero__description {
+    max-width: 720px;
+    margin: 0;
+    font-size: 19px;
+    line-height: 1.8;
+    color: var(--muted);
+}
+
+/* ---------- Back / Navigation ---------- */
+
+.foundation-nav {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.foundation-nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--muted);
+    transition: color 0.2s ease;
+}
+
+.foundation-nav a:hover {
+    color: var(--text);
+}
+
+/* ---------- Main Lesson ---------- */
+
+.foundation-content {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 80px 24px 100px;
+}
+
+/* ---------- Lesson Section ---------- */
+
+.lesson-section {
+    margin-bottom: 90px;
+    scroll-margin-top: 100px;
+}
+
+.lesson-section:last-child {
+    margin-bottom: 0;
+}
+
+.lesson-number {
+    margin-bottom: 12px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.lesson-section h2 {
+    margin: 0 0 20px;
+    font-size: clamp(30px, 5vw, 44px);
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+}
+
+.lesson-section h3 {
+    margin: 32px 0 12px;
+    font-size: 22px;
+    line-height: 1.3;
+}
+
+.lesson-section p {
+    margin: 0 0 18px;
+    font-size: 17px;
+    line-height: 1.85;
+    color: var(--muted);
+}
+
+.lesson-section strong {
+    color: var(--text);
+}
+
+/* ---------- Simple Explanation Card ---------- */
+
+.lesson-card {
+    margin: 28px 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.lesson-card h3 {
+    margin-top: 0;
+}
+
+.lesson-card p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------- Telugu / Simple Explanation ---------- */
+
+.simple-box {
+    margin: 24px 0;
+    padding: 24px 26px;
+    border-left: 3px solid var(--text);
+    background: var(--surface);
+    border-radius: 0 12px 12px 0;
+}
+
+.simple-box p {
+    margin-bottom: 0;
+}
+
+/* ---------- Real Life Example ---------- */
+
+.example-box {
+    margin: 28px 0;
+    padding: 28px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.example-box__label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.example-box h3 {
+    margin: 0 0 12px;
+}
+
+.example-box p {
+    margin-bottom: 0;
+}
+
+/* ---------- Flow Diagram ---------- */
+
+.lesson-flow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 32px 0;
+}
+
+.flow-item {
+    padding: 14px 20px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.flow-arrow {
+    color: var(--muted);
+    font-size: 20px;
+}
+
+/* ---------- Code Examples ---------- */
+
+.code-example {
+    margin: 24px 0;
+    padding: 24px;
+    overflow-x: auto;
+    border-radius: 14px;
+    background: #111;
+    color: #fff;
+}
+
+.code-example pre {
+    margin: 0;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 14px;
+    line-height: 1.8;
+    white-space: pre-wrap;
+}
+
+.code-title {
+    margin-bottom: 14px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.6;
+}
+
+/* ---------- Step List ---------- */
+
+.step-list {
+    display: grid;
+    gap: 14px;
+    margin: 28px 0;
+    padding: 0;
+    list-style: none;
+}
+
+.step-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.step-number {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--background);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.step-list strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.step-list p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ---------- Complexity Cards ---------- */
+
+.complexity-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin: 32px 0;
+}
+
+.complexity-card {
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+}
+
+.complexity-card__big {
+    margin-bottom: 10px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.complexity-card h3 {
+    margin: 0 0 10px;
+    font-size: 19px;
+}
+
+.complexity-card p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ---------- Complexity Table ---------- */
+
+.complexity-table-wrapper {
+    margin: 30px 0;
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.complexity-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 550px;
+}
+
+.complexity-table th,
+.complexity-table td {
+    padding: 16px 18px;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+}
+
+.complexity-table th {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    background: var(--surface);
+}
+
+.complexity-table td {
+    font-size: 15px;
+    color: var(--muted);
+}
+
+.complexity-table td:first-child {
+    color: var(--text);
+    font-family: "Courier New", Courier, monospace;
+    font-weight: 700;
+}
+
+.complexity-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* ---------- Important Note ---------- */
+
+.important-box {
+    margin: 30px 0;
+    padding: 26px;
+    border: 2px solid var(--text);
+    border-radius: 14px;
+}
+
+.important-box__title {
+    margin-bottom: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.important-box p {
+    margin: 0;
+}
+
+/* ---------- Mistake Box ---------- */
+
+.mistake-card {
+    margin: 18px 0;
+    padding: 22px 24px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.mistake-card h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+}
+
+.mistake-card p {
+    margin: 0;
+    font-size: 15px;
+}
+
+/* ---------- Checklist ---------- */
+
+.checklist {
+    display: grid;
+    gap: 12px;
+    margin: 28px 0;
+}
+
+.checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 17px 18px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+}
+
+.checkmark {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-size: 13px;
+}
+
+.checklist-item span:last-child {
+    font-size: 15px;
+}
+
+/* ---------- Quiz ---------- */
+
+.quiz-list {
+    display: grid;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.quiz-item {
+    padding: 22px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--surface);
+}
+
+.quiz-item summary {
+    cursor: pointer;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+.quiz-answer {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* ---------- Next Topic ---------- */
+
+.next-topic {
+    margin-top: 100px;
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--surface);
+}
+
+.next-topic__label {
+    margin-bottom: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.next-topic h2 {
+    margin: 0 0 12px;
+}
+
+.next-topic p {
+    margin-bottom: 24px;
+}
+
+/* ---------- Lesson Button ---------- */
+
+.lesson-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 13px 20px;
+    border-radius: 8px;
+    background: var(--text);
+    color: var(--background);
+    font-size: 14px;
+    font-weight: 700;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.lesson-button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 700px) {
+
+    .foundation-hero {
+        padding: 60px 0 50px;
+    }
+
+    .foundation-hero h1 {
+        font-size: 48px;
+    }
+
+    .foundation-hero__description {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+
+    .foundation-content {
+        padding: 60px 18px 80px;
+    }
+
+    .lesson-section {
+        margin-bottom: 65px;
+    }
+
+    .lesson-section h2 {
+        font-size: 32px;
+    }
+
+    .lesson-section p {
+        font-size: 16px;
+        line-height: 1.75;
+    }
+
+    .lesson-card,
+    .example-box,
+    .simple-box,
+    .important-box {
+        padding: 20px;
+    }
+
+    .complexity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-flow {
+        flex-direction: column;
+    }
+
+    .flow-arrow {
+        transform: rotate(90deg);
+    }
+
+    .next-topic {
+        margin-top: 70px;
+        padding: 26px;
+    }
+}
+
+/* =========================================
+   CLICKABLE TOPIC CARDS
+   ========================================= */
+
+.topic-card {
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.topic-card:hover {
+    transform: translateY(-3px);
+    border-color: #222;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.topic-card:active {
+    transform: translateY(-1px);
 }
