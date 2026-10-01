@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DSA Master — Complete Syllabus</title>
+  <meta name="description" content="Complete DSA syllabus inspired by Striver's A2Z roadmap, explained in simple English + Telugu." />
+
+  <style>
+    :root {
+      --bg: #050507;
+      --bg2: #09090d;
+      --card: rgba(255,255,255,.045);
+      --card2: rgba(255,255,255,.065);
+      --text: #f5f7fb;
+      --muted: #a7adbd;
+      --soft: #777f91;
+      --line: rgba(255,255,255,.10);
+      --blue: #60a5fa;
+      --indigo: #6366f1;
+      --purple: #a855f7;
+      --cyan: #22d3ee;
+      --green: #34d399;
+      --orange: #fb923c;
+      --pink: #f472b6;
+      --shadow: 0 25px 80px rgba(0,0,0,.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(99,102,241,.16), transparent 30%),
+        radial-gradient(circle at 90% 8%, rgba(168,85,247,.13), transparent 28%),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .24;
+      background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 78%);
+      z-index: -2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .orb {
+      position: fixed;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: .10;
+      pointer-events: none;
+      z-index: -1;
+      animation: drift 12s ease-in-out infinite alternate;
+    }
+
+    .orb.one { background: var(--blue); top: 8%; left: -160px; }
+    .orb.two { background: var(--purple); top: 48%; right: -180px; animation-delay: -4s; }
+    .orb.three { background: var(--cyan); bottom: -180px; left: 35%; animation-delay: -8s; }
+
+    @keyframes drift {
+      from { transform: translate(0,0) scale(1); }
+      to { transform: translate(35px, -25px) scale(1.12); }
+    }
+
+    .nav {
+      position: sticky;
+      top: 14px;
+      z-index: 50;
+      width: min(1120px, calc(100% - 28px));
+      margin: 14px auto 0;
+      padding: 10px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      background: rgba(10,10,15,.72);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(20px);
+      border-radius: 999px;
+      box-shadow: 0 10px 35px rgba(0,0,0,.22);
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      background: linear-gradient(90deg, var(--blue), var(--indigo), var(--purple));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .nav-links::-webkit-scrollbar { display: none; }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: .84rem;
+      padding: 8px 11px;
+      border-radius: 999px;
+      white-space: nowrap;
+      transition: .25s ease;
+    }
+
+    .nav-links a:hover {
+      color: white;
+      background: rgba(255,255,255,.07);
+    }
+
+    .hero {
+      width: min(1120px, calc(100% - 28px));
+      margin: 70px auto 0;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero-art {
+      position: absolute;
+      width: 540px;
+      height: 540px;
+      border: 1px solid rgba(96,165,250,.13);
+      border-radius: 50%;
+      animation: spin 26s linear infinite;
+    }
+
+    .hero-art::before,
+    .hero-art::after {
+      content: "";
+      position: absolute;
+      inset: 55px;
+      border: 1px dashed rgba(168,85,247,.17);
+      border-radius: 50%;
+    }
+
+    .hero-art::after {
+      inset: 125px;
+      border-color: rgba(34,211,238,.16);
+    }
+
+    .orbit-dot {
+      position: absolute;
+      width: 11px;
+      height: 11px;
+      background: var(--blue);
+      border-radius: 50%;
+      box-shadow: 0 0 25px var(--blue);
+      top: 40px;
+      left: 50%;
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    .hero-content { position: relative; z-index: 2; max-width: 880px; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 13px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: #cdd4e2;
+      background: rgba(255,255,255,.035);
+      font-size: .82rem;
+      margin-bottom: 24px;
+      animation: rise .8s ease both;
+    }
+
+    .pulse {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 0 rgba(52,211,153,.7);
+      animation: pulse 1.8s infinite;
+    }
+
+    @keyframes pulse {
+      70% { box-shadow: 0 0 0 9px rgba(52,211,153,0); }
+      100% { box-shadow: 0 0 0 0 rgba(52,211,153,0); }
+    }
+
+    h1 {
+      font-size: clamp(3.3rem, 8vw, 7rem);
+      line-height: .92;
+      letter-spacing: -.075em;
+      margin-bottom: 25px;
+      animation: rise .8s .08s ease both;
+    }
+
+    .gradient {
+      background: linear-gradient(100deg, #e7efff 0%, var(--blue) 28%, var(--indigo) 60%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+      animation: rise .8s .16s ease both;
+    }
+
+    .hero p strong { color: #eef2ff; }
+
+    .hero-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      animation: rise .8s .24s ease both;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.055);
+      color: white;
+      font-weight: 700;
+      transition: .25s ease;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--indigo), var(--purple));
+      border-color: transparent;
+      box-shadow: 0 12px 35px rgba(99,102,241,.22);
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(0,0,0,.3);
+    }
+
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(22px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .stats {
+      width: min(980px, calc(100% - 28px));
+      margin: -15px auto 80px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--card);
+      text-align: center;
+      transition: .3s ease;
+    }
+
+    .stat:hover { transform: translateY(-5px); background: var(--card2); }
+
+    .stat strong {
+      display: block;
+      font-size: 1.65rem;
+      letter-spacing: -.04em;
+    }
+
+    .stat span { color: var(--soft); font-size: .8rem; }
+
+    .section {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto 100px;
+      scroll-margin-top: 100px;
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .kicker {
+      color: var(--blue);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-weight: 800;
+      margin-bottom: 9px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      letter-spacing: -.06em;
+      line-height: 1;
+    }
+
+    .section-heading p {
+      margin-top: 12px;
+      color: var(--muted);
+      max-width: 750px;
+    }
+
+    .roadmap {
+      position: relative;
+      display: grid;
+      gap: 18px;
+    }
+
+    .roadmap::before {
+      content: "";
+      position: absolute;
+      left: 30px;
+      top: 25px;
+      bottom: 25px;
+      width: 1px;
+      background: linear-gradient(var(--blue), var(--purple), transparent);
+      opacity: .45;
+    }
+
+    .module {
+      position: relative;
+      margin-left: 66px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background: linear-gradient(145deg, rgba(255,255,255,.055), rgba(255,255,255,.025));
+      overflow: hidden;
+      transition: transform .3s ease, border-color .3s ease, background .3s ease;
+      opacity: 0;
+      transform: translateY(28px);
+    }
+
+    .module.visible {
+      opacity: 1;
+      transform: translateY(0);
+      transition: .65s cubic-bezier(.2,.7,.2,1);
+    }
+
+    .module:hover {
+      transform: translateY(-4px);
+      border-color: rgba(96,165,250,.28);
+      background: rgba(255,255,255,.065);
+    }
+
+    .module-number {
+      position: absolute;
+      left: -66px;
+      top: 21px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: .78rem;
+      font-weight: 900;
+      color: #dbeafe;
+      background: #0b1222;
+      border: 1px solid rgba(96,165,250,.35);
+      box-shadow: 0 0 0 7px var(--bg);
+      z-index: 2;
+    }
+
+    .module summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 22px 24px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+    }
+
+    .module summary::-webkit-details-marker { display: none; }
+
+    .module-icon {
+      width: 48px;
+      height: 48px;
+      flex: 0 0 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px;
+      font-size: 1.35rem;
+      background: linear-gradient(135deg, rgba(96,165,250,.15), rgba(168,85,247,.15));
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .module-title { flex: 1; }
+
+    .module-title h3 {
+      font-size: 1.12rem;
+      letter-spacing: -.025em;
+    }
+
+    .module-title p {
+      color: var(--muted);
+      font-size: .87rem;
+      margin-top: 3px;
+    }
+
+    .chevron {
+      color: var(--soft);
+      font-size: 1.2rem;
+      transition: transform .25s;
+    }
+
+    details[open] .chevron { transform: rotate(180deg); }
+
+    .module-body {
+      border-top: 1px solid var(--line);
+      padding: 22px 24px 25px;
+      background: rgba(0,0,0,.12);
+    }
+
+    .module-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .lang-box {
+      padding: 15px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.035);
+      border: 1px solid rgba(255,255,255,.065);
+    }
+
+    .lang-box small {
+      color: var(--blue);
+      font-weight: 800;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .lang-box p { color: #c3c8d5; font-size: .88rem; }
+
+    .topics {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 9px;
+    }
+
+    .topic {
+      padding: 11px 13px;
+      border: 1px solid rgba(255,255,255,.065);
+      border-radius: 11px;
+      color: #cdd2df;
+      background: rgba(255,255,255,.025);
+      font-size: .84rem;
+      transition: .2s ease;
+    }
+
+    .topic:hover {
+      border-color: rgba(96,165,250,.28);
+      background: rgba(96,165,250,.055);
+      transform: translateX(3px);
+    }
+
+    .topic b { color: white; }
+
+    .tag {
+      display: inline-block;
+      margin-left: 6px;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: .66rem;
+      color: #bfdbfe;
+      background: rgba(59,130,246,.13);
+      border: 1px solid rgba(96,165,250,.18);
+      vertical-align: 2px;
+    }
+
+    .principles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .principle {
+      padding: 23px;
+      border-radius: 20px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      transition: .3s;
+    }
+
+    .principle:hover { transform: translateY(-6px); }
+
+    .principle .big {
+      font-size: 2rem;
+      margin-bottom: 13px;
+    }
+
+    .principle h3 { margin-bottom: 7px; }
+
+    .principle p {
+      color: var(--muted);
+      font-size: .88rem;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 8px;
+      align-items: center;
+    }
+
+    .flow-step {
+      position: relative;
+      padding: 18px 12px;
+      text-align: center;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      background: var(--card);
+    }
+
+    .flow-step strong { display: block; }
+    .flow-step span { color: var(--soft); font-size: .75rem; }
+
+    .flow-arrow {
+      text-align: center;
+      color: var(--blue);
+      font-size: 1.5rem;
+    }
+
+    .plan {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 13px;
+    }
+
+    .plan-card {
+      padding: 21px;
+      min-height: 175px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: var(--card);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .plan-card::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 100px;
+      right: -40px;
+      bottom: -40px;
+      border-radius: 50%;
+      background: rgba(96,165,250,.10);
+      filter: blur(2px);
+    }
+
+    .plan-card .week {
+      color: var(--blue);
+      font-weight: 900;
+      font-size: .75rem;
+      letter-spacing: .1em;
+    }
+
+    .plan-card h3 { margin: 8px 0; }
+    .plan-card p { color: var(--muted); font-size: .84rem; }
+
+    .footer {
+      width: min(1120px, calc(100% - 28px));
+      margin: 0 auto;
+      padding: 35px 0 55px;
+      border-top: 1px solid var(--line);
+      color: var(--soft);
+      text-align: center;
+      font-size: .82rem;
+    }
+
+    .source {
+      margin-top: 10px;
+    }
+
+    .source a {
+      color: #a5b4fc;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .top {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 43px;
+      height: 43px;
+      border-radius: 50%;
+      border: 1px solid var(--line);
+      background: rgba(12,12,18,.82);
+      color: white;
+      cursor: pointer;
+      opacity: 0;
+      pointer-events: none;
+      transition: .25s;
+      z-index: 40;
+    }
+
+    .top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    @media (max-width: 850px) {
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .principles { grid-template-columns: 1fr; }
+      .plan { grid-template-columns: repeat(2, 1fr); }
+      .flow { grid-template-columns: 1fr; }
+      .flow-arrow { transform: rotate(90deg); }
+    }
+
+    @media (max-width: 650px) {
+      .nav { border-radius: 18px; align-items: flex-start; }
+      .nav-links { display: none; }
+      .hero { min-height: 570px; margin-top: 35px; }
+      .hero-art { width: 350px; height: 350px; }
+      .stats { grid-template-columns: 1fr 1fr; }
+      .module { margin-left: 47px; }
+      .roadmap::before { left: 22px; }
+      .module-number { left: -47px; width: 38px; height: 38px; }
+      .module summary { padding: 17px; }
+      .module-icon { width: 42px; height: 42px; flex-basis: 42px; }
+      .module-intro, .topics { grid-template-columns: 1fr; }
+      .plan { grid-template-columns: 1fr; }
+      .section { margin-bottom: 75px; }
+    }
+  </style>
+</head>
+
+<body id="top">
+  <div class="orb one"></div>
+  <div class="orb two"></div>
+  <div class="orb three"></div>
+
+  <nav class="nav">
+    <a class="brand" href="index.html">DSA<span>Master</span></a>
+    <div class="nav-links">
+      <a href="#roadmap">Roadmap</a>
+      <a href="#mindset">Mindset</a>
+      <a href="#process">Process</a>
+      <a href="#plan">Plan</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-art">
+      <div class="orbit-dot"></div>
+    </div>
+
+    <div class="hero-content">
+      <div class="eyebrow"><span class="pulse"></span> Complete DSA Roadmap</div>
+
+      <h1>
+        Learn DSA<br />
+        <span class="gradient">from Zero → Interview Ready.</span>
+      </h1>
+
+      <p>
+        A complete learning path inspired by <strong>Striver's A2Z DSA Sheet</strong>.
+        Concepts are arranged from beginner foundations to advanced interview topics.
+        Simple English + Telugu explanations, visual thinking, and practice-first learning.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn primary" href="#roadmap">Start Roadmap ↓</a>
+        <a class="btn" href="index.html">← Back to DSA Master</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="stats">
+    <div class="stat"><strong>20</strong><span>Current A2Z modules</span></div>
+    <div class="stat"><strong>495</strong><span>Current topics</span></div>
+    <div class="stat"><strong>131.4h</strong><span>Listed learning time</span></div>
+    <div class="stat"><strong>∞</strong><span>Practice mindset</span></div>
+  </section>
+
+  <main>
+    <section class="section" id="roadmap">
+      <div class="section-heading">
+        <div class="kicker">01 / Complete syllabus</div>
+        <h2>The Roadmap</h2>
+        <p>
+          Open each module. First understand the idea, then learn the pattern,
+          then solve problems. Don't rush directly into code.
+        </p>
+      </div>
+
+      <div class="roadmap">
+
+        <details class="module" open>
+          <span class="module-number">01</span>
+          <summary>
+            <div class="module-icon">🧠</div>
+            <div class="module-title">
+              <h3>Beginner Problems</h3>
+              <p>Programming fundamentals • logic building • patterns</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box">
+                <small>Simple English</small>
+                <p>Learn how computers follow instructions and how to turn a problem into clear steps before coding.</p>
+              </div>
+              <div class="lang-box">
+                <small>తెలుగు</small>
+                <p>Code రాయడం కంటే ముందు problem ని ఎలా break చేయాలి, logic ఎలా build చేయాలి అనేది నేర్చుకో.</p>
+              </div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Programming basics</b> — variables, data, input/output</div>
+              <div class="topic"><b>Conditions</b> — if, else, nested decisions</div>
+              <div class="topic"><b>Loops</b> — for, while, repeated work</div>
+              <div class="topic"><b>Functions</b> — reusable logic</div>
+              <div class="topic"><b>Problem reading</b> — input, output, rules, constraints</div>
+              <div class="topic"><b>Flowcharts & pseudocode</b> — think before syntax</div>
+              <div class="topic"><b>Pattern problems</b> — stars, numbers, spaces</div>
+              <div class="topic"><b>Logic building</b> — small problems → strong thinking</div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">02</span>
+          <summary>
+            <div class="module-icon">↕️</div>
+            <div class="module-title">
+              <h3>Sorting</h3>
+              <p>Arrange data so later problems become easier</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Sorting means putting values in a useful order, usually ascending or descending.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Numbers లేదా data ని order లో పెట్టడం sorting. Sorting తెలిసితే చాలా array problems easy అవుతాయి.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Selection Sort</b></div>
+              <div class="topic"><b>Bubble Sort</b></div>
+              <div class="topic"><b>Insertion Sort</b></div>
+              <div class="topic"><b>Merge Sort</b></div>
+              <div class="topic"><b>Quick Sort</b></div>
+              <div class="topic"><b>Recursive sorting</b></div>
+              <div class="topic"><b>Sorting-based problem solving</b></div>
+              <div class="topic"><b>Time & space comparison</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">03</span>
+          <summary>
+            <div class="module-icon">📦</div>
+            <div class="module-title">
+              <h3>Arrays</h3>
+              <p>Core data structure • scanning • manipulation • patterns</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Arrays store values in order. Most interview problems start with learning how to scan and manipulate them.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Array అంటే values ని order లో store చేసే structure. Array మీద thinking strong అయితే DSA foundation strong అవుతుంది.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Largest / smallest element</b></div>
+              <div class="topic"><b>Second largest / second smallest</b></div>
+              <div class="topic"><b>Reverse an array</b></div>
+              <div class="topic"><b>Rotate array</b></div>
+              <div class="topic"><b>Remove duplicates</b></div>
+              <div class="topic"><b>Move zeroes</b></div>
+              <div class="topic"><b>Union / intersection</b></div>
+              <div class="topic"><b>Missing number</b></div>
+              <div class="topic"><b>Maximum subarray</b></div>
+              <div class="topic"><b>Two Sum / 3 Sum</b></div>
+              <div class="topic"><b>Majority element</b></div>
+              <div class="topic"><b>Stock buy & sell</b></div>
+              <div class="topic"><b>Merge overlapping intervals</b></div>
+              <div class="topic"><b>Matrix problems</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">04</span>
+          <summary>
+            <div class="module-icon">#️⃣</div>
+            <div class="module-title">
+              <h3>Hashing</h3>
+              <p>Fast lookup • frequency • counting • mapping</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Hashing helps you store and find information quickly using keys.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ఒక value ఎన్ని సార్లు వచ్చింది? త్వరగా ఉందా? ఎవరి pair? ఇలాంటి questions కి hashing చాలా useful.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Frequency counting</b></div>
+              <div class="topic"><b>HashMap / HashSet</b></div>
+              <div class="topic"><b>Count occurrences</b></div>
+              <div class="topic"><b>Two Sum with hashing</b></div>
+              <div class="topic"><b>Longest consecutive sequence</b></div>
+              <div class="topic"><b>Subarray sum</b></div>
+              <div class="topic"><b>Frequency-based problems</b></div>
+              <div class="topic"><b>Prefix hashing ideas</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">05</span>
+          <summary>
+            <div class="module-icon">🔎</div>
+            <div class="module-title">
+              <h3>Binary Search</h3>
+              <p>Search faster by eliminating half the possibilities</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Instead of checking everything, repeatedly cut the search space in half.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ప్రతి step లో half possibilities ని remove చేస్తాం. అందుకే binary search చాలా fast.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Binary search basics</b></div>
+              <div class="topic"><b>Lower bound</b></div>
+              <div class="topic"><b>Upper bound</b></div>
+              <div class="topic"><b>First / last occurrence</b></div>
+              <div class="topic"><b>Search in rotated array</b></div>
+              <div class="topic"><b>Peak element</b></div>
+              <div class="topic"><b>Binary search on answer</b></div>
+              <div class="topic"><b>Minimize / maximize answer</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">06</span>
+          <summary>
+            <div class="module-icon">🔤</div>
+            <div class="module-title">
+              <h3>Strings — Basic & Medium</h3>
+              <p>Characters • frequency • comparisons • manipulation</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Strings are sequences of characters. Learn to scan, compare, count and transform them.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>String అంటే characters sequence. Character frequency, reverse, palindrome లాంటి patterns నేర్చుకో.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Reverse string</b></div>
+              <div class="topic"><b>Palindrome</b></div>
+              <div class="topic"><b>Character frequency</b></div>
+              <div class="topic"><b>Anagram</b></div>
+              <div class="topic"><b>Remove / replace characters</b></div>
+              <div class="topic"><b>Longest common prefix</b></div>
+              <div class="topic"><b>Substring problems</b></div>
+              <div class="topic"><b>String comparisons</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">07</span>
+          <summary>
+            <div class="module-icon">🔁</div>
+            <div class="module-title">
+              <h3>Recursion</h3>
+              <p>Function calls itself • base case • problem decomposition</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Recursion solves a problem by solving smaller versions of the same problem.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ఒక function అదే problem యొక్క smaller version ని solve చేయడానికి తనని తాను call చేసుకుంటే recursion.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Base case</b></div>
+              <div class="topic"><b>Recursive case</b></div>
+              <div class="topic"><b>Call stack</b></div>
+              <div class="topic"><b>Print problems</b></div>
+              <div class="topic"><b>Parameter / functional recursion</b></div>
+              <div class="topic"><b>Subsequence generation</b></div>
+              <div class="topic"><b>Combination / permutation ideas</b></div>
+              <div class="topic"><b>Backtracking foundation</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">08</span>
+          <summary>
+            <div class="module-icon">🔗</div>
+            <div class="module-title">
+              <h3>Linked List</h3>
+              <p>Dynamic nodes • pointers/references • traversal</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Linked lists connect nodes using references instead of storing everything next to each other.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ప్రతి node దగ్గర data + next node reference ఉంటుంది. Links మార్చడం linked-list thinking లో key.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Singly linked list</b></div>
+              <div class="topic"><b>Insert / delete</b></div>
+              <div class="topic"><b>Traversal</b></div>
+              <div class="topic"><b>Reverse linked list</b></div>
+              <div class="topic"><b>Middle of linked list</b></div>
+              <div class="topic"><b>Detect cycle</b></div>
+              <div class="topic"><b>Merge linked lists</b></div>
+              <div class="topic"><b>Doubly linked list</b></div>
+              <div class="topic"><b>Fast & slow pointers</b></div>
+              <div class="topic"><b>Linked-list interview patterns</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">09</span>
+          <summary>
+            <div class="module-icon">⚡</div>
+            <div class="module-title">
+              <h3>Bit Manipulation</h3>
+              <p>Binary representation • bit tricks • efficient operations</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Work directly with the binary bits of numbers using operators like AND, OR, XOR and shifts.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Numbers binary bits గా ఎలా represent అవుతాయో తెలుసుకుని bit operators తో fast tricks solve చేస్తాం.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>AND, OR, XOR</b></div>
+              <div class="topic"><b>Left / right shift</b></div>
+              <div class="topic"><b>Odd / even check</b></div>
+              <div class="topic"><b>Set / unset bit</b></div>
+              <div class="topic"><b>Power of two</b></div>
+              <div class="topic"><b>Count set bits</b></div>
+              <div class="topic"><b>Single number patterns</b></div>
+              <div class="topic"><b>Bitwise problem solving</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">10</span>
+          <summary>
+            <div class="module-icon">🎯</div>
+            <div class="module-title">
+              <h3>Greedy Algorithms</h3>
+              <p>Take the best local choice and reason about why it works</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Greedy algorithms make a locally best choice at each step, when that strategy is justified for the problem.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ప్రతి step లో best-looking choice తీసుకుంటాం. కానీ ప్రతి problem కి greedy work అవదు — proof/logic అర్థం చేసుకోవాలి.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Activity selection</b></div>
+              <div class="topic"><b>Fractional knapsack</b></div>
+              <div class="topic"><b>Job sequencing</b></div>
+              <div class="topic"><b>Minimum platforms</b></div>
+              <div class="topic"><b>Merge / interval ideas</b></div>
+              <div class="topic"><b>Greedy proof intuition</b></div>
+              <div class="topic"><b>Scheduling patterns</b></div>
+              <div class="topic"><b>When greedy fails</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">11</span>
+          <summary>
+            <div class="module-icon">🪟</div>
+            <div class="module-title">
+              <h3>Sliding Window / Two Pointer</h3>
+              <p>Move boundaries intelligently instead of repeated work</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Maintain a moving range or two indices to avoid recalculating the same information.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Repeated loops తగ్గించడానికి left/right pointers లేదా moving window use చేస్తాం.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Fixed-size window</b></div>
+              <div class="topic"><b>Variable-size window</b></div>
+              <div class="topic"><b>Longest / shortest window</b></div>
+              <div class="topic"><b>Two Sum with two pointers</b></div>
+              <div class="topic"><b>Remove duplicates</b></div>
+              <div class="topic"><b>Pair / triplet patterns</b></div>
+              <div class="topic"><b>Subarray / substring windows</b></div>
+              <div class="topic"><b>Pointer movement reasoning</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">12</span>
+          <summary>
+            <div class="module-icon">📚</div>
+            <div class="module-title">
+              <h3>Stack / Queues</h3>
+              <p>Order of processing • LIFO • FIFO • monotonic structures</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Stack works like last-in-first-out. Queue works like first-in-first-out.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Stack = last వచ్చినది first బయటకి. Queue = first వచ్చినది first బయటకి. ఈ order ని problems లో use చేస్తాం.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Stack implementation</b></div>
+              <div class="topic"><b>Queue implementation</b></div>
+              <div class="topic"><b>Infix / postfix / prefix</b></div>
+              <div class="topic"><b>Valid parentheses</b></div>
+              <div class="topic"><b>Next greater element</b></div>
+              <div class="topic"><b>Monotonic stack</b></div>
+              <div class="topic"><b>Sliding window maximum</b></div>
+              <div class="topic"><b>Min stack</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">13</span>
+          <summary>
+            <div class="module-icon">🌳</div>
+            <div class="module-title">
+              <h3>Binary Trees</h3>
+              <p>Hierarchical data • traversals • recursion • views</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>A tree stores data hierarchically. Learn traversal first, then build more advanced tree reasoning.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Tree లో parent-child relationship ఉంటుంది. First traversal strong చేసుకో; తరువాత advanced tree problems easy అవుతాయి.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Binary tree basics</b></div>
+              <div class="topic"><b>Preorder</b></div>
+              <div class="topic"><b>Inorder</b></div>
+              <div class="topic"><b>Postorder</b></div>
+              <div class="topic"><b>Level order</b></div>
+              <div class="topic"><b>Height / depth</b></div>
+              <div class="topic"><b>Diameter</b></div>
+              <div class="topic"><b>Balanced tree</b></div>
+              <div class="topic"><b>Tree views</b></div>
+              <div class="topic"><b>Lowest common ancestor</b></div>
+              <div class="topic"><b>Path problems</b></div>
+              <div class="topic"><b>Tree recursion patterns</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">14</span>
+          <summary>
+            <div class="module-icon">🌲</div>
+            <div class="module-title">
+              <h3>Binary Search Trees</h3>
+              <p>Ordered trees • search • insert • delete • validation</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>In a BST, values on the left are smaller and values on the right are larger, following the BST rule.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>BST లో left side values చిన్నవి, right side values పెద్దవి. ఈ property ని problems లో repeatedly use చేస్తాం.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Search in BST</b></div>
+              <div class="topic"><b>Insert node</b></div>
+              <div class="topic"><b>Delete node</b></div>
+              <div class="topic"><b>Validate BST</b></div>
+              <div class="topic"><b>Minimum / maximum</b></div>
+              <div class="topic"><b>Kth smallest / largest</b></div>
+              <div class="topic"><b>LCA in BST</b></div>
+              <div class="topic"><b>BST iterator</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">15</span>
+          <summary>
+            <div class="module-icon">⛰️</div>
+            <div class="module-title">
+              <h3>Heaps</h3>
+              <p>Priority-based processing • min heap • max heap</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>A heap quickly gives access to the smallest or largest priority item.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ఎప్పుడూ minimum లేదా maximum element త్వరగా కావాలంటే heap / priority queue useful.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Min heap</b></div>
+              <div class="topic"><b>Max heap</b></div>
+              <div class="topic"><b>Priority queue</b></div>
+              <div class="topic"><b>Heapify</b></div>
+              <div class="topic"><b>Heap sort</b></div>
+              <div class="topic"><b>Kth largest / smallest</b></div>
+              <div class="topic"><b>Merge sorted structures</b></div>
+              <div class="topic"><b>Heap-based scheduling</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">16</span>
+          <summary>
+            <div class="module-icon">🕸️</div>
+            <div class="module-title">
+              <h3>Graphs</h3>
+              <p>Nodes + edges • traversal • shortest path • spanning trees</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Graphs model connections: people, roads, networks, dependencies and many real-world systems.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Graph అంటే nodes + connections. Roads, social networks, courses dependencies లాంటి systems ని represent చేయవచ్చు.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Graph representation</b></div>
+              <div class="topic"><b>BFS</b></div>
+              <div class="topic"><b>DFS</b></div>
+              <div class="topic"><b>Connected components</b></div>
+              <div class="topic"><b>Cycle detection</b></div>
+              <div class="topic"><b>Bipartite graph</b></div>
+              <div class="topic"><b>Topological sort</b></div>
+              <div class="topic"><b>Dijkstra</b></div>
+              <div class="topic"><b>Bellman-Ford</b></div>
+              <div class="topic"><b>Floyd-Warshall</b></div>
+              <div class="topic"><b>Minimum spanning tree</b></div>
+              <div class="topic"><b>DSU / Disjoint Set Union</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">17</span>
+          <summary>
+            <div class="module-icon">🧩</div>
+            <div class="module-title">
+              <h3>Dynamic Programming</h3>
+              <p>Break repeated work • store answers • optimize recursion</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>DP stores answers to repeated subproblems so the same work is not done again.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>ఒకే subproblem మళ్లీ మళ్లీ వస్తే answer store చేసి reuse చేస్తాం. అదే DP core idea.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Recursion → DP</b></div>
+              <div class="topic"><b>Memoization</b></div>
+              <div class="topic"><b>Tabulation</b></div>
+              <div class="topic"><b>Space optimization</b></div>
+              <div class="topic"><b>1D DP</b></div>
+              <div class="topic"><b>2D / grid DP</b></div>
+              <div class="topic"><b>Knapsack</b></div>
+              <div class="topic"><b>Subsequence DP</b></div>
+              <div class="topic"><b>String DP</b></div>
+              <div class="topic"><b>Stock DP</b></div>
+              <div class="topic"><b>Partition DP</b></div>
+              <div class="topic"><b>DP on trees / advanced patterns</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">18</span>
+          <summary>
+            <div class="module-icon">🔤</div>
+            <div class="module-title">
+              <h3>Tries</h3>
+              <p>Prefix tree • fast word/prefix operations</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>A Trie stores words by their character paths and is useful for prefix-based queries.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Words ని character-by-character treeలా store చేస్తాం. Prefix search/autocomplete type problems కి useful.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Trie structure</b></div>
+              <div class="topic"><b>Insert word</b></div>
+              <div class="topic"><b>Search word</b></div>
+              <div class="topic"><b>Starts-with / prefix</b></div>
+              <div class="topic"><b>Delete / terminal markers</b></div>
+              <div class="topic"><b>Trie-based XOR ideas</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">19</span>
+          <summary>
+            <div class="module-icon">🧵</div>
+            <div class="module-title">
+              <h3>Strings — Advanced Algorithms</h3>
+              <p>Pattern matching • prefix information • advanced string processing</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Advanced string algorithms help search and compare patterns efficiently in large text.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>Large strings లో pattern search efficient గా చేయడానికి advanced algorithms నేర్చుకుంటాం.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Pattern matching</b></div>
+              <div class="topic"><b>Prefix-function ideas</b></div>
+              <div class="topic"><b>KMP</b></div>
+              <div class="topic"><b>Z algorithm</b></div>
+              <div class="topic"><b>String hashing concepts</b></div>
+              <div class="topic"><b>Advanced substring reasoning</b></div>
+            </div>
+          </div>
+        </details>
+
+        <details class="module">
+          <span class="module-number">20</span>
+          <summary>
+            <div class="module-icon">🔢</div>
+            <div class="module-title">
+              <h3>Maths</h3>
+              <p>Number theory • counting • divisibility • mathematical tools</p>
+            </div>
+            <div class="chevron">⌄</div>
+          </summary>
+          <div class="module-body">
+            <div class="module-intro">
+              <div class="lang-box"><small>Simple English</small><p>Math tools often turn a slow brute-force solution into a fast one.</p></div>
+              <div class="lang-box"><small>తెలుగు</small><p>కొన్ని DSA problems లో math trick గుర్తిస్తే huge amount of work save అవుతుంది.</p></div>
+            </div>
+            <div class="topics">
+              <div class="topic"><b>Prime numbers</b></div>
+              <div class="topic"><b>Factors</b></div>
+              <div class="topic"><b>GCD / LCM</b></div>
+              <div class="topic"><b>Euclidean algorithm</b></div>
+              <div class="topic"><b>Modular arithmetic</b></div>
+              <div class="topic"><b>Fast exponentiation</b></div>
+              <div class="topic"><b>Combinatorics basics</b></div>
+              <div class="topic"><b>Number-theory patterns</b></div>
+            </div>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <section class="section" id="mindset">
+      <div class="section-heading">
+        <div class="kicker">02 / How to think</div>
+        <h2>DSA is not memorization.</h2>
+        <p>Learn a repeatable way to attack an unfamiliar problem.</p>
+      </div>
+
+      <div class="principles">
+        <article class="principle">
+          <div class="big">👀</div>
+          <h3>Understand</h3>
+          <p>Read the problem. Identify input, output, rules, constraints and edge cases.</p>
+        </article>
+        <article class="principle">
+          <div class="big">🧠</div>
+          <h3>Think</h3>
+          <p>Start with a simple brute-force idea. Then ask: what repeated work can I remove?</p>
+        </article>
+        <article class="principle">
+          <div class="big">⚙️</div>
+          <h3>Optimize</h3>
+          <p>Choose the data structure or pattern that reduces unnecessary work.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="process">
+      <div class="section-heading">
+        <div class="kicker">03 / Problem solving loop</div>
+        <h2>Your interview workflow</h2>
+        <p>Use this same loop for almost every DSA problem.</p>
+      </div>
+
+      <div class="flow">
+        <div class="flow-step"><strong>Read</strong><span>Problem</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><strong>Model</strong><span>Input / Output</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><strong>Brute Force</strong><span>Simple idea</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><strong>Optimize</strong><span>Pattern</span></div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step"><strong>Prove + Code</strong><span>Complexity</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="plan">
+      <div class="section-heading">
+        <div class="kicker">04 / Suggested execution</div>
+        <h2>Study in stages.</h2>
+        <p>Do not try to finish the whole syllabus in a few days. Build the foundation first.</p>
+      </div>
+
+      <div class="plan">
+        <article class="plan-card">
+          <div class="week">STAGE 01</div>
+          <h3>Foundation</h3>
+          <p>Programming basics, logic building, patterns, complexity and sorting.</p>
+        </article>
+        <article class="plan-card">
+          <div class="week">STAGE 02</div>
+          <h3>Core DSA</h3>
+          <p>Arrays, hashing, binary search, strings, recursion and linked lists.</p>
+        </article>
+        <article class="plan-card">
+          <div class="week">STAGE 03</div>
+          <h3>Patterns</h3>
+          <p>Bits, greedy, sliding window, two pointers, stacks and queues.</p>
+        </article>
+        <article class="plan-card">
+          <div class="week">STAGE 04</div>
+          <h3>Advanced</h3>
+          <p>Trees, BST, heaps, graphs, DP, tries, advanced strings and maths.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="section-heading">
+        <div class="kicker">05 / Golden rules</div>
+        <h2>Remember these.</h2>
+      </div>
+
+      <div class="principles">
+        <article class="principle">
+          <div class="big">1️⃣</div>
+          <h3>Don't copy immediately</h3>
+          <p>Try the problem yourself first. Even a wrong attempt teaches you where your thinking breaks.</p>
+        </article>
+        <article class="principle">
+          <div class="big">2️⃣</div>
+          <h3>Always know complexity</h3>
+          <p>After solving, ask: “How much time? How much extra space?”</p>
+        </article>
+        <article class="principle">
+          <div class="big">3️⃣</div>
+          <h3>Revision is mandatory</h3>
+          <p>Re-solve difficult problems later without looking at the old code.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <strong>DSA Master</strong> — Learn the logic. Recognize the pattern. Solve the problem.
+    <div class="source">
+      Syllabus structure based on the current
+      <a href="https://takeuforward.org/prep-hub/strivers-a2z-dsa-sheet" target="_blank" rel="noopener">
+        Striver's A2Z DSA Sheet
+      </a>.
+    </div>
+  </footer>
+
+  <button class="top" id="topBtn" aria-label="Back to top">↑</button>
+
+  <script>
+    // Reveal modules as they enter the screen.
+    const modules = document.querySelectorAll(".module");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08 });
+
+    modules.forEach((module, index) => {
+      module.style.transitionDelay = `${Math.min(index * 45, 350)}ms`;
+      observer.observe(module);
+    });
+
+    // Back-to-top button.
+    const topBtn = document.getElementById("topBtn");
+
+    window.addEventListener("scroll", () => {
+      topBtn.classList.toggle("show", window.scrollY > 700);
+    });
+
+    topBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Add a small stagger effect when opening a module.
+    document.querySelectorAll("details.module").forEach((detail) => {
+      detail.addEventListener("toggle", () => {
+        if (detail.open) {
+          const topics = detail.querySelectorAll(".topic");
+          topics.forEach((topic, i) => {
+            topic.animate(
+              [
+                { opacity: 0, transform: "translateY(5px)" },
+                { opacity: 1, transform: "translateY(0)" }
+              ],
+              { duration: 260, delay: i * 22, fill: "both", easing: "ease-out" }
+            );
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

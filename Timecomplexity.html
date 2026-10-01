@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Time Complexity — DSA Interview Guide</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#11182b; --panel2:#17213a; --text:#eef3ff;
+    --muted:#aeb9d3; --line:#2b3857; --accent:#7dd3fc; --accent2:#a78bfa;
+    --good:#86efac; --warn:#fcd34d; --bad:#fca5a5; --pink:#f0abfc;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
+    background:radial-gradient(circle at 15% 0%,#1a2b50 0,#0b1020 34%),var(--bg);
+    color:var(--text); line-height:1.65;
+  }
+  .wrap{max-width:1180px;margin:auto;padding:28px 18px 70px}
+  .hero{
+    padding:34px 28px; border:1px solid var(--line); border-radius:24px;
+    background:linear-gradient(135deg,rgba(23,33,58,.96),rgba(17,24,43,.92));
+    box-shadow:0 20px 70px rgba(0,0,0,.25);
+  }
+  .eyebrow{color:var(--accent);font-weight:800;letter-spacing:.12em;text-transform:uppercase;font-size:13px}
+  h1{font-size:clamp(34px,5vw,62px);line-height:1.05;margin:8px 0 12px}
+  h2{font-size:30px;margin:0 0 12px}
+  h3{font-size:21px;margin:0 0 8px}
+  p{margin:7px 0}
+  .sub{color:var(--muted);font-size:17px;max-width:900px}
+  .chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:18px}
+  .chip{border:1px solid var(--line);background:#0d1528;padding:7px 12px;border-radius:999px;color:#dbe7ff}
+  section{margin-top:28px}
+  .panel{
+    background:rgba(17,24,43,.92);border:1px solid var(--line);border-radius:20px;
+    padding:22px;overflow:hidden;
+  }
+  .note{border-left:4px solid var(--accent);padding:12px 15px;background:#0d172a;border-radius:10px;margin:14px 0}
+  .tel{color:#d7e2fa}
+  .small{color:var(--muted);font-size:14px}
+  table{width:100%;border-collapse:collapse;margin-top:15px;min-width:780px}
+  th,td{padding:13px 12px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+  th{color:#cfe4ff;background:#121d34;position:sticky;top:0}
+  tr:hover td{background:rgba(125,211,252,.035)}
+  .table-wrap{overflow:auto;border:1px solid var(--line);border-radius:14px}
+  code,kbd{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}
+  code{color:#bfe8ff}
+  .complex{font-weight:900;white-space:nowrap}
+  .n10{color:var(--bad)} .n20{color:var(--pink)} .n100{color:var(--warn)}
+  .n500{color:#fde68a}.n2k{color:#bef264}.n1e5{color:var(--good)} .n1e6{color:#67e8f9}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:16px}
+  .card{background:#0e1629;border:1px solid var(--line);border-radius:16px;padding:17px}
+  .card strong{display:block;font-size:25px;margin:4px 0}
+  .bars{display:grid;gap:11px;margin-top:16px}
+  .barrow{display:grid;grid-template-columns:115px 1fr;gap:10px;align-items:center}
+  .bar{height:18px;background:#202c47;border-radius:999px;overflow:hidden}
+  .fill{height:100%;border-radius:999px}
+  .f1{width:16%;background:#86efac}.f2{width:30%;background:#67e8f9}.f3{width:46%;background:#a78bfa}
+  .f4{width:64%;background:#fcd34d}.f5{width:80%;background:#fb7185}.f6{width:96%;background:#ef4444}
+  .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+  .flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-top:15px}
+  .box{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:#121c31;font-weight:800}
+  .arrow{color:var(--accent);font-size:22px}
+  pre{
+    margin:12px 0 0;padding:16px;overflow:auto;background:#080d18;border:1px solid #202d49;
+    border-radius:12px;color:#d9e7ff
+  }
+  .keyword{color:var(--accent);font-weight:800}
+  .callout{background:linear-gradient(135deg,#10243a,#171a38);border:1px solid #2d4769}
+  .quiz{background:#101a2e;border:1px dashed #496287;border-radius:15px;padding:16px}
+  .toc{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+  .toc a{color:#dbeafe;text-decoration:none;border:1px solid var(--line);padding:7px 11px;border-radius:10px;background:#0c1426}
+  footer{color:var(--muted);text-align:center;padding-top:30px}
+  @media(max-width:700px){
+    .hero{padding:24px 18px}.panel{padding:17px}
+    .barrow{grid-template-columns:90px 1fr} table{font-size:14px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">DSA • Interview Thinking</div>
+  <h1>Time Complexity — from the notebook to interview level</h1>
+  <p class="sub">
+    Ee page lo mee handwritten notes lo unna main ideas ni clean ga organize chesanu:
+    <b>N size → allowed complexity → suitable patterns → array problem strategy.</b>
+  </p>
+  <div class="chips">
+    <span class="chip">Simple English</span>
+    <span class="chip">తెలుగు explanation</span>
+    <span class="chip">Visuals</span>
+    <span class="chip">Interview focused</span>
+    <span class="chip">Arrays + DSA</span>
+  </div>
+  <div class="toc">
+    <a href="#big-o">Big-O</a><a href="#limits">N limits</a><a href="#patterns">Patterns</a>
+    <a href="#arrays">Arrays</a><a href="#examples">Examples</a><a href="#interview">Interview rules</a>
+  </div>
+</header>
+
+<section id="big-o" class="panel">
+  <h2>1. First: What is Time Complexity?</h2>
+  <p><b>Time Complexity</b> = input size <code>N</code> perigina appudu mana algorithm work entha fast ga periguthundo.</p>
+  <p class="tel"><b>Telugu:</b> Input size <code>N</code> chinnaga unte slow algorithm kuda okay. N pedda ayye koddi, algorithm entha work chestundo important.</p>
+
+  <div class="note">
+    <b>Important:</b> Big-O usually focuses on the growth rate, not exact seconds.
+    <br><span class="tel">Example: O(2N), O(100N), O(N) — growth point of view lo same family: O(N).</span>
+  </div>
+
+  <div class="cards">
+    <div class="card"><span>Constant</span><strong>O(1)</strong><p>One/few operations. N change aina work almost same.</p></div>
+    <div class="card"><span>Logarithmic</span><strong>O(log N)</strong><p>Problem size repeatedly half avutundi. Example: Binary Search.</p></div>
+    <div class="card"><span>Linear</span><strong>O(N)</strong><p>Usually one pass through input.</p></div>
+    <div class="card"><span>Linearithmic</span><strong>O(N log N)</strong><p>Common efficient sorting complexity.</p></div>
+    <div class="card"><span>Quadratic</span><strong>O(N²)</strong><p>Two nested passes/pairs. Small N ki okay.</p></div>
+    <div class="card"><span>Exponential</span><strong>O(2ᴺ)</strong><p>Choices repeatedly double. Subsets/backtracking.</p></div>
+    <div class="card"><span>Factorial</span><strong>O(N!)</strong><p>All permutations type problems. Very expensive.</p></div>
+  </div>
+
+  <div class="bars" aria-label="growth visualization">
+    <div class="barrow"><b>O(1)</b><div class="bar"><div class="fill f1"></div></div></div>
+    <div class="barrow"><b>O(log N)</b><div class="bar"><div class="fill f2"></div></div></div>
+    <div class="barrow"><b>O(N)</b><div class="bar"><div class="fill f3"></div></div></div>
+    <div class="barrow"><b>O(N log N)</b><div class="bar"><div class="fill f4"></div></div></div>
+    <div class="barrow"><b>O(N²)</b><div class="bar"><div class="fill f5"></div></div></div>
+    <div class="barrow"><b>O(2ᴺ), O(N!)</b><div class="bar"><div class="fill f6"></div></div></div>
+  </div>
+  <p class="small">Visual is conceptual only — exact growth depends on N.</p>
+</section>
+
+<section id="limits" class="panel">
+  <h2>2. N chusi complexity guess cheyyadam</h2>
+  <p class="tel">Interview lo constraints chusina ventane “ee problem ki roughly entha complexity afford cheyyachu?” ani think cheyyali.</p>
+  <div class="table-wrap">
+  <table>
+    <thead><tr><th>N range</th><th>Common target / possible complexity</th><th>Patterns from the notes</th><th>Simple meaning</th></tr></thead>
+    <tbody>
+      <tr><td class="complex n10">N ≤ 10</td><td><b>O(N!)</b>, <b>O(2ᴺ)</b></td><td>Backtracking, Permutation</td><td>Very small N. Many choices explore cheyyachu.</td></tr>
+      <tr><td class="complex n20">N ≤ 20</td><td><b>O(2ᴺ)</b></td><td>Subsets, Bitmask</td><td>2ᴺ can still be considered for around 20.</td></tr>
+      <tr><td class="complex n100">N ≤ 100</td><td><b>O(N³)</b>, <b>O(N²)</b></td><td>DP, Brute Force</td><td>Triple loops may be possible; check actual operations/time limit.</td></tr>
+      <tr><td class="complex n500">N ≤ 500</td><td><b>O(N²)</b> is a common target</td><td>DP, Two Pointer, Brute Force (depending on problem)</td><td>Quadratic can be reasonable; O(N³) usually needs caution.</td></tr>
+      <tr><td class="complex n2k">N ≤ 2,000</td><td><b>O(N²)</b> often considered</td><td>Sorting, Hashing, Two Pointer, DP, Greedy</td><td>Choose an optimized quadratic approach if needed.</td></tr>
+      <tr><td class="complex n1e5">N ≤ 10⁵</td><td><b>O(N log N)</b> / <b>O(N)</b></td><td>Sorting, Hashing, Two Pointer, Sliding Window</td><td>Very common interview/contest range. Avoid O(N²).</td></tr>
+      <tr><td class="complex n1e6">N ≤ 10⁶</td><td><b>O(N)</b> often preferred</td><td>Prefix/Suffix, Two Pointer, Sliding Window</td><td>Linear scan is a strong target; memory also matters.</td></tr>
+      <tr><td class="complex">Very large</td><td><b>O(log N)</b>, <b>O(N)</b>, sometimes better</td><td>Binary Search, Math, Greedy, Optimized Data Structures</td><td>Need a very efficient idea; avoid repeated full scans when possible.</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="note">
+    <b>Senior-interview correction:</b> Ee table is a <i>rule of thumb</i>, not a strict law.
+    Actual accepted complexity depends on time limit, language, constant factors, memory limit, and number of test cases.
+    <span class="tel">N chusi blind ga answer cheyyakunda, operation count + constraints + test cases kalipi decide cheyyali.</span>
+  </div>
+</section>
+
+<section id="patterns" class="panel">
+  <h2>3. Complexity → Pattern mapping</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>O(N!) / O(2ᴺ)</h3>
+      <p><span class="keyword">Backtracking</span> = every choice ni try chesi, tarvata undo.</p>
+      <p><span class="keyword">Permutation</span> = elements order arrangements.</p>
+      <p><span class="keyword">Subsets</span> = every element ki take / don't take.</p>
+      <p><span class="keyword">Bitmask</span> = take/not-take decisions ni bits tho represent cheyyadam.</p>
+    </div>
+    <div class="card">
+      <h3>O(N³) / O(N²)</h3>
+      <p><span class="keyword">Brute Force</span> = possible pairs/triples ni directly try cheyyadam.</p>
+      <p><span class="keyword">DP</span> = repeated subproblem results ni store chesi reuse cheyyadam.</p>
+      <p class="tel">N small/moderate ayite quadratic/cubic sometimes acceptable.</p>
+    </div>
+    <div class="card">
+      <h3>O(N log N)</h3>
+      <p><span class="keyword">Sorting</span> is a common reason.</p>
+      <p>Sort first → then binary search / two pointers / greedy pattern use cheyyachu.</p>
+      <p class="tel">“Sort chesi problem simple cheyyacha?” ani always ask yourself.</p>
+    </div>
+    <div class="card">
+      <h3>O(N)</h3>
+      <p><span class="keyword">Hashing</span>, <span class="keyword">Two Pointer</span>, <span class="keyword">Sliding Window</span>, <span class="keyword">Prefix/Suffix</span>.</p>
+      <p>Usually array ni one/few passes lo process chestam.</p>
+    </div>
+    <div class="card">
+      <h3>O(log N)</h3>
+      <p><span class="keyword">Binary Search</span> main example.</p>
+      <p>Every step lo search space roughly half avutundi.</p>
+    </div>
+    <div class="card">
+      <h3>O(1)</h3>
+      <p>Direct lookup or fixed amount of work.</p>
+      <p>Example: array index access <code>a[i]</code> (typical array model).</p>
+    </div>
+  </div>
+</section>
+
+<section id="arrays" class="panel">
+  <h2>4. Arrays: handwritten notes lo unna core idea</h2>
+  <p><b>Given an array + N ≤ 10⁵</b>, first target usually <b>O(N)</b> or <b>O(N log N)</b>.</p>
+  <p class="tel">Array problem chusthe first ee 4 questions adugu:</p>
+
+  <div class="flow">
+    <div class="box">1. Sorted aa?</div><div class="arrow">→</div>
+    <div class="box">2. Continuous subarray aa?</div><div class="arrow">→</div>
+    <div class="box">3. Frequency kavala?</div><div class="arrow">→</div>
+    <div class="box">4. Pair / two ends relation aa?</div>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+    <div class="card">
+      <h3>Sorted → Binary Search</h3>
+      <p>If array sorted and target/search condition exists, binary search may reduce O(N) to O(log N).</p>
+      <p class="tel">Sorted property ni waste cheyyakudadhu.</p>
+    </div>
+    <div class="card">
+      <h3>Continuous → Sliding Window</h3>
+      <p>Subarray/contiguous range problems often suggest a window.</p>
+      <p class="tel">Left + right pointers move chesi current window ni maintain chestam.</p>
+    </div>
+    <div class="card">
+      <h3>Frequency → HashMap</h3>
+      <p>Count occurrences / duplicates / most frequent item → HashMap/Map is a natural tool.</p>
+      <p class="tel">Value ki count ni store chestam.</p>
+    </div>
+    <div class="card">
+      <h3>Prefix / Suffix</h3>
+      <p>Repeated left/right aggregate calculations unte prefix or suffix arrays can avoid repeated work.</p>
+      <p class="tel">Malli malli same sum calculate cheyyakunda precompute chesi reuse chestam.</p>
+    </div>
+  </div>
+
+  <div class="note callout">
+    <b>Core interview habit:</b> “Brute force enti? Adi entha complexity? Danilo repeated work ekkada undi?
+    Aa repeated work ni HashMap / sorting / prefix / two pointers / sliding window / DP tho remove cheyyacha?”
+  </div>
+</section>
+
+<section id="examples" class="panel">
+  <h2>5. Tiny examples — every concept from zero</h2>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Example A — O(N)</h3>
+      <p>Largest number find cheyyali.</p>
+      <pre><code>max = a[0]
+for x in a:
+    max = max(max, x)</code></pre>
+      <p>Array once scan → <b>O(N)</b>.</p>
+      <p class="tel">O(N) because N elements ni inspect chestunnam.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example B — O(N²)</h3>
+      <p>Every pair check cheyyali.</p>
+      <pre><code>for i = 0..N-1:
+    for j = i+1..N-1:
+        check(a[i], a[j])</code></pre>
+      <p>Two dimensions of work → <b>O(N²)</b>.</p>
+      <p class="tel">N=1000 ayite roughly million-scale pair checks.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example C — O(log N)</h3>
+      <p>Sorted array lo target search.</p>
+      <pre><code>left = 0
+right = N-1
+while left &lt;= right:
+    mid = (left + right) // 2
+    ...</code></pre>
+      <p>Each step search range ni half chestundi → <b>O(log N)</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example D — O(N log N)</h3>
+      <p>Sort + one linear scan.</p>
+      <pre><code>sort(a)       // O(N log N)
+scan(a)       // O(N)
+total         // O(N log N)</code></pre>
+      <p>Dominant term is <b>N log N</b>.</p>
+    </div>
+
+    <div class="card">
+      <h3>Example E — O(2ᴺ)</h3>
+      <p>Every element: take or don't take.</p>
+      <pre><code>choose(index):
+    choose(index + 1)   // take
+    choose(index + 1)   // don't take</code></pre>
+      <p>2 choices × N levels → <b>O(2ᴺ)</b> leaves (roughly).</p>
+    </div>
+
+    <div class="card">
+      <h3>Example F — O(N!)</h3>
+      <p>All permutations generate cheyyali.</p>
+      <p>N elements ki arrangements = <code>N!</code>.</p>
+      <p class="tel">N=10 → 3,628,800 permutations. N increase ayite explosion very fast.</p>
+    </div>
+  </div>
+
+  <div class="note">
+    <b>Space Complexity:</b> Time matrame kaadu. Extra memory kuda check cheyyali.
+    <br>Example: HashMap counts → usually O(N) extra space. Sorting can be in-place or use extra memory depending on implementation.
+    <br><span class="tel">Interview lo “time = ?, extra space = ?” ani rendu cheppadam habit chesko.</span>
+  </div>
+</section>
+
+<section class="panel">
+  <h2>6. How to derive Big-O — small concepts</h2>
+  <div class="grid2">
+    <div class="card">
+      <h3>Sequential work → add</h3>
+      <pre><code>loop N       → O(N)
+loop N       → O(N)
+total        → O(2N)
+Big-O        → O(N)</code></pre>
+      <p class="tel">Constants ni usually ignore chestam.</p>
+    </div>
+    <div class="card">
+      <h3>Nested loops → multiply</h3>
+      <pre><code>for N:
+    for N:
+        work</code></pre>
+      <p><b>N × N = N²</b> → O(N²).</p>
+    </div>
+    <div class="card">
+      <h3>Different loops → dominant term</h3>
+      <pre><code>O(N²) + O(N) + O(1)
+        ↓
+       O(N²)</code></pre>
+      <p class="tel">N big ayyaka N² dominates.</p>
+    </div>
+    <div class="card">
+      <h3>Halving → log N</h3>
+      <pre><code>N
+N/2
+N/4
+N/8
+...
+1</code></pre>
+      <p>How many halvings until 1? → about <b>log₂N</b>.</p>
+    </div>
+  </div>
+</section>
+
+<section id="interview" class="panel">
+  <h2>7. Senior-level interview checklist</h2>
+  <ol>
+    <li><b>Read constraints first.</b> <span class="tel">N entha? Values range enti? Test cases entha?</span></li>
+    <li><b>Write brute force mentally.</b> <span class="tel">First correct solution identify cheyyi.</span></li>
+    <li><b>Calculate its complexity.</b> <span class="tel">O(N), O(N²), O(2ᴺ)...</span></li>
+    <li><b>Compare with N.</b> <span class="tel">N=10⁵ and O(N²) ante likely problem.</span></li>
+    <li><b>Find repeated work.</b> <span class="tel">Same values/counts/sums/ranges repeatedly calculate chestunnava?</span></li>
+    <li><b>Pick a pattern.</b> HashMap / sorting / two pointers / sliding window / prefix-suffix / binary search / DP.</li>
+    <li><b>State time + space.</b> Interviewer ki clear ga cheppu.</li>
+  </ol>
+
+  <div class="quiz">
+    <h3>Quick practice</h3>
+    <p><b>Q1:</b> N = 20 and problem asks every subset. Which family can be considered?</p>
+    <p><b>Answer:</b> O(2ᴺ), often via recursion/backtracking or bitmask.</p>
+    <p><b>Q2:</b> N = 10⁵, need duplicate/frequency counts. What natural tool?</p>
+    <p><b>Answer:</b> HashMap/Map → typically O(N) expected time.</p>
+    <p><b>Q3:</b> N = 10⁵ and array is sorted; need to find a target. What should you consider?</p>
+    <p><b>Answer:</b> Binary Search → O(log N) per search.</p>
+  </div>
+</section>
+
+<section class="panel callout">
+  <h2>8. One-page mental model</h2>
+  <div class="flow">
+    <div class="box">Constraint N</div><div class="arrow">→</div>
+    <div class="box">Allowed complexity</div><div class="arrow">→</div>
+    <div class="box">Spot pattern</div><div class="arrow">→</div>
+    <div class="box">Code</div><div class="arrow">→</div>
+    <div class="box">Prove Time + Space</div>
+  </div>
+  <p style="margin-top:18px"><b>Remember:</b> N is not just a number. <span class="tel">N anedi algorithm selection clue.</span></p>
+  <p class="tel">
+    Array problem vachinappudu: <b>Sorted?</b> → Binary Search / Two Pointer;
+    <b>Continuous?</b> → Sliding Window;
+    <b>Frequency?</b> → HashMap;
+    <b>Repeated range calculation?</b> → Prefix/Suffix;
+    <b>Choices?</b> → Backtracking/DP/Bitmask depending on constraints.
+  </p>
+</section>
+
+<footer>
+  Built as a clean study page from the uploaded handwritten Time Complexity + Array notes.
+  <br>Use this as a mental model; always verify against the exact problem constraints and time limit.
+</footer>
+
+</div>
+</body>
+</html>

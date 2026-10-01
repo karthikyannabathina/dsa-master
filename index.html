@@ -1,1543 +1,963 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>DSA Master</title>
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-
+  <body>
     <!-- ================= HEADER ================= -->
 
     <header class="header">
+      <div class="container header-content">
+        <a href="#" class="logo"> DSA<span>Master</span> </a>
 
-        <div class="container header-content">
-
-            <a href="#" class="logo">
-                DSA<span>Master</span>
-            </a>
-
-            <nav class="nav">
-                <a href="#dashboard">Home</a>
-                <a href="#basics">Basics</a>
-                <a href="#syllabus">Syllabus</a>
-                <a href="#patterns">Patterns</a>
-                <a href="#problems">Problems</a>
-                <a href="#revision">Revision</a>
-            </nav>
-
-        </div>
-
+        <nav class="nav">
+          <a href="#dashboard">Home</a>
+          <a href="#basics">Basics</a>
+          <a href="syllabus.html">Syllabus</a>
+          <a href="#patterns">Patterns</a>
+          <a href="#problems">Problems</a>
+          <a href="#revision">Revision</a>
+        </nav>
+      </div>
     </header>
-
 
     <!-- ================= MAIN ================= -->
 
     <main>
+      <!-- ================= HERO ================= -->
 
+      <section class="hero" id="dashboard">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-text">
+              <p class="eyebrow">PERSONAL DSA LEARNING SYSTEM</p>
 
-        <!-- ================= HERO ================= -->
+              <h1>
+                Learn DSA
+                <br />
+                <span>from zero.</span>
+              </h1>
 
-        <section class="hero" id="dashboard">
+              <p class="hero-description">
+                No previous knowledge required. First understand the basics,
+                then learn concepts, recognize patterns, and finally solve
+                problems.
+              </p>
 
-            <div class="container">
+              <div class="hero-actions">
+                <a href="#basics" class="primary-button"> Start From Zero → </a>
 
-                <div class="hero-content">
-
-                    <div class="hero-text">
-
-                        <p class="eyebrow">
-                            PERSONAL DSA LEARNING SYSTEM
-                        </p>
-
-                        <h1>
-                            Learn DSA
-                            <br>
-                            <span>from zero.</span>
-                        </h1>
-
-                        <p class="hero-description">
-                            No previous knowledge required.
-                            First understand the basics, then learn concepts,
-                            recognize patterns, and finally solve problems.
-                        </p>
-
-                        <div class="hero-actions">
-
-                            <a href="#basics" class="primary-button">
-                                Start From Zero →
-                            </a>
-
-                            <a href="#syllabus" class="secondary-button">
-                                View Syllabus
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="progress-card">
-
-                        <div class="progress-card-header">
-
-                            <div>
-                                <p class="card-label">
-                                    Learning Progress
-                                </p>
-
-                                <h2>
-                                    0 <span>/ 200</span>
-                                </h2>
-                            </div>
-
-                            <div class="progress-percent">
-                                0%
-                            </div>
-
-                        </div>
-
-                        <div class="progress-bar">
-                            <div class="progress-fill"></div>
-                        </div>
-
-                        <p class="progress-text">
-                            Start your first concept today.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ================= STATS ================= -->
-
-                <div class="stats">
-
-                    <div class="stat-card">
-                        <p class="stat-number">01</p>
-                        <p class="stat-label">Current Level</p>
-                    </div>
-
-                    <div class="stat-card">
-                        <p class="stat-number">12</p>
-                        <p class="stat-label">Topics</p>
-                    </div>
-
-                    <div class="stat-card">
-                        <p class="stat-number">24</p>
-                        <p class="stat-label">Patterns</p>
-                    </div>
-
-                    <div class="stat-card">
-                        <p class="stat-number">00</p>
-                        <p class="stat-label">Problems Solved</p>
-                    </div>
-
-                </div>
-
+                <a href="#syllabus" class="secondary-button"> View Syllabus </a>
+              </div>
             </div>
 
-        </section>
+            <div class="progress-card">
+              <div class="progress-card-header">
+                <div>
+                  <p class="card-label">Learning Progress</p>
 
-
-        <!-- ================= BASICS ================= -->
-
-        <section class="section basics-section" id="basics">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            01 — START HERE
-                        </p>
-
-                        <h2>
-                            First understand<br>
-                            the basics.
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        DSA ki direct problems loki vellakunda,
-                        first "what", "why" and "how" understand cheddam.
-                    </p>
-
+                  <h2>0 <span>/ 200</span></h2>
                 </div>
 
-
-                <div class="basics-grid">
-
-
-                    <!-- TIME COMPLEXITY -->
-
-                    <article class="concept-card featured">
-
-                        <div class="concept-number">
-                            01
-                        </div>
-
-                        <div class="concept-content">
-
-                            <p class="concept-label">
-                                VERY IMPORTANT
-                            </p>
-
-                            <h3>
-                                Time Complexity
-                            </h3>
-
-                            <p class="concept-simple">
-                                Code run avvadaniki entha work chestundo
-                                measure cheyyadaniki Time Complexity use chestham.
-                            </p>
-
-                            <div class="explanation">
-
-                                <h4>
-                                    Simple ga cheppali ante:
-                                </h4>
-
-                                <p>
-                                    Oka problem lo input size
-                                    <strong>n</strong> anukundam.
-                                    n increase ayithe mana code entha slow
-                                    avuthundo chustham.
-                                </p>
-
-                                <div class="example-box">
-
-                                    <code>
-                                        for (let i = 0; i &lt; n; i++) {
-                                            <br>
-                                            &nbsp;&nbsp;console.log(i);
-                                            <br>
-                                        }
-                                    </code>
-
-                                    <p>
-                                        Loop n times run avuthundi →
-                                        <strong>O(n)</strong>
-                                    </p>
-
-                                </div>
-
-                                <div class="complexity-list">
-
-                                    <span>
-                                        O(1) → Same work
-                                    </span>
-
-                                    <span>
-                                        O(n) → n times work
-                                    </span>
-
-                                    <span>
-                                        O(n²) → n × n work
-                                    </span>
-
-                                    <span>
-                                        O(log n) → Search space fast ga reduce
-                                    </span>
-
-                                </div>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- SPACE COMPLEXITY -->
-
-                    <article class="concept-card">
-
-                        <div class="concept-number">
-                            02
-                        </div>
-
-                        <div class="concept-content">
-
-                            <p class="concept-label">
-                                VERY IMPORTANT
-                            </p>
-
-                            <h3>
-                                Space Complexity
-                            </h3>
-
-                            <p class="concept-simple">
-                                Code execute avvadaniki extra ga entha
-                                memory/storage use chestundo measure cheyyadam.
-                            </p>
-
-                            <div class="explanation">
-
-                                <h4>
-                                    Simple example:
-                                </h4>
-
-                                <p>
-                                    Oka extra variable matrame create chesthe,
-                                    input entha perigina extra memory almost same.
-                                </p>
-
-                                <div class="example-box">
-
-                                    <code>
-                                        let sum = 0;
-                                        <br>
-                                        let count = 0;
-                                    </code>
-
-                                    <p>
-                                        Extra variables fixed →
-                                        <strong>O(1) Space</strong>
-                                    </p>
-
-                                </div>
-
-                                <p class="small-note">
-                                    Time = entha work?
-                                    <br>
-                                    Space = entha extra memory?
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- VARIABLES -->
-
-                    <article class="concept-card">
-
-                        <div class="concept-number">
-                            03
-                        </div>
-
-                        <div class="concept-content">
-
-                            <p class="concept-label">
-                                FOUNDATION
-                            </p>
-
-                            <h3>
-                                Variables
-                            </h3>
-
-                            <p class="concept-simple">
-                                Data ni temporarily store cheyyadaniki
-                                variables use chestham.
-                            </p>
-
-                            <div class="mini-example">
-
-                                <code>
-                                    let age = 21;
-                                    <br>
-                                    let name = "Karthik";
-                                </code>
-
-                            </div>
-
-                            <p class="concept-tip">
-                                First variables clear ga ardham cheskovali.
-                                DSA lo everywhere use avuthayi.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                    <!-- LOOPS -->
-
-                    <article class="concept-card">
-
-                        <div class="concept-number">
-                            04
-                        </div>
-
-                        <div class="concept-content">
-
-                            <p class="concept-label">
-                                FOUNDATION
-                            </p>
-
-                            <h3>
-                                Loops
-                            </h3>
-
-                            <p class="concept-simple">
-                                Same work ni multiple times cheyyali ante
-                                loops use chestham.
-                            </p>
-
-                            <div class="mini-example">
-
-                                <code>
-                                    for (let i = 0; i &lt; n; i++) {
-                                    <br>
-                                    &nbsp;&nbsp;console.log(i);
-                                    <br>
-                                    }
-                                </code>
-
-                            </div>
-
-                            <p class="concept-tip">
-                                Loop count chudatam →
-                                Time Complexity understand cheyyadaniki first step.
-                            </p>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-
-                <!-- ================= LEARNING RULE ================= -->
-
-                <div class="learning-rule">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            GOLDEN RULE
-                        </p>
-
-                        <h3>
-                            Don't memorize first.
-                            Understand first.
-                        </h3>
-
-                    </div>
-
-                    <p>
-                        Concept enti?
-                        <br>
-                        Enduku use chestham?
-                        <br>
-                        Eppudu use chestham?
-                        <br>
-                        Simple example enti?
-                        <br>
-                        Tarvatha problem solve cheyyali.
-                    </p>
-
-                </div>
-
+                <div class="progress-percent">0%</div>
+              </div>
+
+              <div class="progress-bar">
+                <div class="progress-fill"></div>
+              </div>
+
+              <p class="progress-text">Start your first concept today.</p>
+            </div>
+          </div>
+
+          <!-- ================= STATS ================= -->
+
+          <div class="stats">
+            <div class="stat-card">
+              <p class="stat-number">01</p>
+              <p class="stat-label">Current Level</p>
             </div>
 
-        </section>
-
-
-        <!-- ================= DSA FLOW ================= -->
-
-        <section class="section flow-section">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            02 — HOW TO LEARN
-                        </p>
-
-                        <h2>
-                            One simple<br>
-                            learning flow.
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Every DSA topic ni same process tho learn cheyyali.
-                        Appudu confusion thaggutundi.
-                    </p>
-
-                </div>
-
-
-                <div class="flow-grid">
-
-                    <article class="flow-card">
-
-                        <span>01</span>
-
-                        <h3>
-                            Concept
-                        </h3>
-
-                        <p>
-                            Asalu concept enti?
-                            Very simple language lo understand cheyyi.
-                        </p>
-
-                    </article>
-
-
-                    <article class="flow-card">
-
-                        <span>02</span>
-
-                        <h3>
-                            Why?
-                        </h3>
-
-                        <p>
-                            Ee concept enduku use chestham?
-                            Real problem enti?
-                        </p>
-
-                    </article>
-
-
-                    <article class="flow-card">
-
-                        <span>03</span>
-
-                        <h3>
-                            Example
-                        </h3>
-
-                        <p>
-                            Small example tho manually dry run cheyyi.
-                        </p>
-
-                    </article>
-
-
-                    <article class="flow-card">
-
-                        <span>04</span>
-
-                        <h3>
-                            Pattern
-                        </h3>
-
-                        <p>
-                            Similar problems anni same pattern follow chestunnaya?
-                            Identify cheyyi.
-                        </p>
-
-                    </article>
-
-
-                    <article class="flow-card">
-
-                        <span>05</span>
-
-                        <h3>
-                            Problems
-                        </h3>
-
-                        <p>
-                            First easy problems.
-                            Tarvatha medium.
-                            Finally hard.
-                        </p>
-
-                    </article>
-
-
-                    <article class="flow-card">
-
-                        <span>06</span>
-
-                        <h3>
-                            Revision
-                        </h3>
-
-                        <p>
-                            Mistakes note chesi,
-                            malli same concept ni revise cheyyi.
-                        </p>
-
-                    </article>
-
-                </div>
-
+            <div class="stat-card">
+              <p class="stat-number">12</p>
+              <p class="stat-label">Topics</p>
             </div>
 
-        </section>
+            <div class="stat-card">
+              <p class="stat-number">24</p>
+              <p class="stat-label">Patterns</p>
+            </div>
 
-
-        <!-- ================= SYLLABUS ================= -->
-
-        <section class="section" id="syllabus">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            03 — LEARNING PATH
-                        </p>
-
-                        <h2>
-                            DSA Syllabus
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Random ga problems solve cheyyakunda,
-                        step-by-step order lo learn cheddam.
-                    </p>
-
-                </div>
-
-
-                <div class="syllabus-grid">
-
-
-                    <a href="foundation.html" class="topic-card completed">
-    <div class="topic-number">01</div>
-
-    <div class="topic-content">
-        <h3>Foundations</h3>
-        <p>Complexity, arrays, basic problem solving.</p>
-
-        <div class="topic-progress">
-            <span>8 / 8</span>
-            <span>100%</span>
+            <div class="stat-card">
+              <p class="stat-number">00</p>
+              <p class="stat-label">Problems Solved</p>
+            </div>
+          </div>
         </div>
-
-        <div class="small-progress">
-            <div class="small-progress-fill" style="width: 100%;"></div>
-        </div>
-    </div>
-</a>
-
-
-                    <a href="arrays.html"
-   class="topic-card"
-   aria-label="Open Arrays learning page">
-
-    <div class="topic-number">02</div>
-
-    <div class="topic-content">
-        <h3>Arrays</h3>
-
-        <p>
-            Learn arrays, indexing, traversal, searching,
-            two pointers, prefix sums and core patterns.
-        </p>
-
-        <div class="topic-progress">
-            <span>0 / 12 checkpoints</span>
-
-            <div class="small-progress">
-                <span style="width: 0%;"></span>
-            </div>
-        </div>
-    </div>
-
-</a>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            03
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                NEXT
-                            </p>
-
-                            <h3>
-                                Arrays
-                            </h3>
-
-                            <p>
-                                Traversal, searching, sorting basics,
-                                prefix sum and Kadane's algorithm.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 25</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            04
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                NEXT
-                            </p>
-
-                            <h3>
-                                Strings
-                            </h3>
-
-                            <p>
-                                Characters, frequency counting,
-                                substrings and basic string problems.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 18</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            05
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                PATTERN
-                            </p>
-
-                            <h3>
-                                Two Pointers
-                            </h3>
-
-                            <p>
-                                Two indexes ni smart ga move chesi
-                                problem solve cheyyadam.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 15</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            06
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                PATTERN
-                            </p>
-
-                            <h3>
-                                Sliding Window
-                            </h3>
-
-                            <p>
-                                Continuous subarray or substring
-                                problems ni efficiently solve cheyyadam.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 15</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            07
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                CORE DSA
-                            </p>
-
-                            <h3>
-                                Linked List
-                            </h3>
-
-                            <p>
-                                Nodes, pointers, traversal,
-                                reversal and cycle problems.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 15</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card">
-
-                        <div class="topic-number">
-                            08
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                CORE DSA
-                            </p>
-
-                            <h3>
-                                Binary Search
-                            </h3>
-
-                            <p>
-                                Search space ni half-half ga reduce
-                                chesi answer find cheyyadam.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>0 / 15</span>
-                                <span>0%</span>
-                            </div>
-
-                            <div class="small-progress">
-                                <div style="width: 0%;"></div>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card locked">
-
-                        <div class="topic-number">
-                            09
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                LATER
-                            </p>
-
-                            <h3>
-                                Stack & Queue
-                            </h3>
-
-                            <p>
-                                LIFO, FIFO and common interview patterns.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>Locked</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card locked">
-
-                        <div class="topic-number">
-                            10
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                LATER
-                            </p>
-
-                            <h3>
-                                Trees
-                            </h3>
-
-                            <p>
-                                Binary trees, DFS, BFS and
-                                tree traversal patterns.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>Locked</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card locked">
-
-                        <div class="topic-number">
-                            11
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                LATER
-                            </p>
-
-                            <h3>
-                                Graphs
-                            </h3>
-
-                            <p>
-                                Nodes, edges, BFS, DFS and
-                                shortest path basics.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>Locked</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                    <article class="topic-card locked">
-
-                        <div class="topic-number">
-                            12
-                        </div>
-
-                        <div class="topic-content">
-
-                            <p class="topic-status">
-                                LATER
-                            </p>
-
-                            <h3>
-                                Dynamic Programming
-                            </h3>
-
-                            <p>
-                                States, choices, transitions,
-                                memoization and tabulation.
-                            </p>
-
-                            <div class="topic-progress">
-                                <span>Locked</span>
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-                </div>
-
+      </section>
+
+      <!-- ================= BASICS ================= -->
+
+      <section class="section basics-section" id="basics">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">01 — START HERE</p>
+
+              <h2>
+                First understand<br />
+                the basics.
+              </h2>
             </div>
 
-        </section>
+            <p>
+              DSA ki direct problems loki vellakunda, first "what", "why" and
+              "how" understand cheddam.
+            </p>
+          </div>
 
+          <div class="basics-grid">
+            <!-- TIME COMPLEXITY -->
 
-        <!-- ================= PATTERNS ================= -->
+            <a href="Timecomplexity.html" class="concept-card featured">
+              <div class="concept-number">01</div>
 
-        <section class="section dark-section" id="patterns">
+              <div class="concept-content">
+                <p class="concept-label">VERY IMPORTANT</p>
 
-            <div class="container">
+                <h3>Time Complexity</h3>
 
-                <div class="section-heading">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            04 — PATTERN LIBRARY
-                        </p>
-
-                        <h2>
-                            Think in patterns.
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        500 solutions memorize cheyyadam goal kaadu.
-                        Problem chusi pattern identify cheyyadam goal.
-                    </p>
-
-                </div>
-
-
-                <div class="pattern-grid">
-
-
-                    <article class="pattern-card">
-
-                        <span>01</span>
-
-                        <h3>
-                            Constant Window
-                        </h3>
-
-                        <p>
-                            Fixed size window.
-                            Example: every 3 elements ni consider cheyyali.
-                        </p>
-
-                    </article>
-
-
-                    <article class="pattern-card">
-
-                        <span>02</span>
-
-                        <h3>
-                            Longest Window
-                        </h3>
-
-                        <p>
-                            Condition satisfy chestunna
-                            longest continuous range find cheyyali.
-                        </p>
-
-                    </article>
-
-
-                    <article class="pattern-card">
-
-                        <span>03</span>
-
-                        <h3>
-                            Count Windows
-                        </h3>
-
-                        <p>
-                            Condition satisfy chestunna
-                            total subarrays/substrings count cheyyali.
-                        </p>
-
-                    </article>
-
-
-                    <article class="pattern-card">
-
-                        <span>04</span>
-
-                        <h3>
-                            Minimum Window
-                        </h3>
-
-                        <p>
-                            Valid condition satisfy chestunna
-                            smallest range find cheyyali.
-                        </p>
-
-                    </article>
-
-
-                    <article class="pattern-card">
-
-                        <span>05</span>
-
-                        <h3>
-                            Two Pointers
-                        </h3>
-
-                        <p>
-                            Two indexes ni intelligent ga
-                            move chesi work reduce cheyyali.
-                        </p>
-
-                    </article>
-
-
-                    <article class="pattern-card">
-
-                        <span>06</span>
-
-                        <h3>
-                            Binary Search
-                        </h3>
-
-                        <p>
-                            Search space ni repeatedly half
-                            chesi answer find cheyyali.
-                        </p>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= PROBLEMS ================= -->
-
-        <section class="section" id="problems">
-
-            <div class="container">
-
-                <div class="section-heading">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            05 — PRACTICE
-                        </p>
-
-                        <h2>
-                            Problem Tracker
-                        </h2>
-
-                    </div>
-
-                    <p>
-                        Problem solve chesava?
-                        Why solution works ani kuda understand chesava?
-                    </p>
-
-                </div>
-
-
-                <div class="problem-list">
-
-
-                    <article class="problem-row">
-
-                        <div class="problem-status pending">
-                            01
-                        </div>
-
-                        <div class="problem-info">
-
-                            <h3>
-                                Find the Largest Element
-                            </h3>
-
-                            <div class="problem-meta">
-
-                                <span>Arrays</span>
-                                <span>Easy</span>
-                                <span>Beginner</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="problem-action">
-                            Not Started
-                        </div>
-
-                    </article>
-
-
-                    <article class="problem-row">
-
-                        <div class="problem-status pending">
-                            02
-                        </div>
-
-                        <div class="problem-info">
-
-                            <h3>
-                                Find the Smallest Element
-                            </h3>
-
-                            <div class="problem-meta">
-
-                                <span>Arrays</span>
-                                <span>Easy</span>
-                                <span>Beginner</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="problem-action">
-                            Not Started
-                        </div>
-
-                    </article>
-
-
-                    <article class="problem-row">
-
-                        <div class="problem-status pending">
-                            03
-                        </div>
-
-                        <div class="problem-info">
-
-                            <h3>
-                                Reverse an Array
-                            </h3>
-
-                            <div class="problem-meta">
-
-                                <span>Arrays</span>
-                                <span>Easy</span>
-                                <span>Two Pointers</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="problem-action">
-                            Not Started
-                        </div>
-
-                    </article>
-
-
-                    <article class="problem-row">
-
-                        <div class="problem-status pending">
-                            04
-                        </div>
-
-                        <div class="problem-info">
-
-                            <h3>
-                                Maximum Points You Can Obtain from Cards
-                            </h3>
-
-                            <div class="problem-meta">
-
-                                <span>Sliding Window</span>
-                                <span>Medium</span>
-                                <span>LeetCode</span>
-
-                            </div>
-
-                        </div>
-
-                        <div class="problem-action">
-                            Later
-                        </div>
-
-                    </article>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= REVISION ================= -->
-
-        <section class="section revision-section" id="revision">
-
-            <div class="container">
-
-                <div class="revision-layout">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            06 — REVISION
-                        </p>
-
-                        <h2>
-                            Learn once.<br>
-                            Remember forever.
-                        </h2>
-
-                        <p class="section-description">
-                            DSA lo just solve chesi move on avvakudadhu.
-                            Important concepts ni repeated ga revise cheyyali.
-                        </p>
-
-                    </div>
-
-
-                    <div class="revision-card">
-
-                        <div class="revision-header">
-
-                            <h3>
-                                Today's Revision
-                            </h3>
-
-                            <span>
-                                Start from basics
-                            </span>
-
-                        </div>
-
-
-                        <div class="revision-item">
-
-                            <span class="revision-icon">
-                                01
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Time Complexity
-                                </h4>
-
-                                <p>
-                                    O(1), O(n), O(n²)
-                                </p>
-
-                            </div>
-
-                            <span>
-                                →
-                            </span>
-
-                        </div>
-
-
-                        <div class="revision-item">
-
-                            <span class="revision-icon">
-                                02
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Space Complexity
-                                </h4>
-
-                                <p>
-                                    Extra memory basics
-                                </p>
-
-                            </div>
-
-                            <span>
-                                →
-                            </span>
-
-                        </div>
-
-
-                        <div class="revision-item">
-
-                            <span class="revision-icon">
-                                03
-                            </span>
-
-                            <div>
-
-                                <h4>
-                                    Loops
-                                </h4>
-
-                                <p>
-                                    Count how many times they run
-                                </p>
-
-                            </div>
-
-                            <span>
-                                →
-                            </span>
-
-                        </div>
-
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= MISTAKE BOOK ================= -->
-
-        <section class="section">
-
-            <div class="container">
-
-                <div class="mistake-box">
-
-                    <div>
-
-                        <p class="eyebrow">
-                            07 — MISTAKE BOOK
-                        </p>
-
-                        <h2>
-                            Mistakes ni<br>
-                            save cheyyi.
-                        </h2>
-
-                        <p>
-                            Wrong answer vachindha?
-                            Solution chudakunda mundu
-                            mistake enti ani identify cheyyi.
-                        </p>
-
-                    </div>
-
-
-                    <div class="mistake-example">
-
-                        <div class="mistake-top">
-
-                            <span>
-                                Time Complexity
-                            </span>
-
-                            <span>
-                                Revision #1
-                            </span>
-
-                        </div>
-
-
-                        <h3>
-                            Nested loop ni O(n) anukunna.
-                        </h3>
-
-
-                        <p>
-                            Two loops independently run avvatledu.
-                            One loop inside another loop undi.
-                            So total work n × n = O(n²).
-                        </p>
-
-
-                        <div class="mistake-footer">
-
-                            <span>
-                                Lesson learned
-                            </span>
-
-                            <strong>
-                                Count loops carefully
-                            </strong>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- ================= FINAL MESSAGE ================= -->
-
-        <section class="section final-section">
-
-            <div class="container">
-
-                <p class="eyebrow">
-                    REMEMBER
+                <p class="concept-simple">
+                  Code run avvadaniki entha work chestundo measure cheyyadaniki
+                  Time Complexity use chestham.
                 </p>
 
-                <h2>
-                    DSA is not about<br>
-                    being naturally smart.
-                </h2>
+                <div class="explanation">
+                  <h4>Simple ga cheppali ante:</h4>
 
-                <p class="final-description">
-                    First basics understand cheyyi.
-                    Then patterns recognize cheyyi.
-                    Problems solve cheyyi.
-                    Mistakes nunchi learn avvu.
-                    Daily little progress is enough.
+                  <p>
+                    Oka problem lo input size
+                    <strong>n</strong> anukundam. n increase ayithe mana code
+                    entha slow avuthundo chustham.
+                  </p>
+
+                  <div class="example-box">
+                    <code>
+                      for (let i = 0; i &lt; n; i++) {
+                      <br />
+                      &nbsp;&nbsp;console.log(i);
+                      <br />
+                      }
+                    </code>
+
+                    <p>
+                      Loop n times run avuthundi →
+                      <strong>O(n)</strong>
+                    </p>
+                  </div>
+
+                  <div class="complexity-list">
+                    <span> O(1) → Same work </span>
+
+                    <span> O(n) → n times work </span>
+
+                    <span> O(n²) → n × n work </span>
+
+                    <span> O(log n) → Search space fast ga reduce </span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <!-- SPACE COMPLEXITY -->
+
+            <article class="concept-card">
+              <div class="concept-number">02</div>
+
+              <div class="concept-content">
+                <p class="concept-label">VERY IMPORTANT</p>
+
+                <h3>Space Complexity</h3>
+
+                <p class="concept-simple">
+                  Code execute avvadaniki extra ga entha memory/storage use
+                  chestundo measure cheyyadam.
                 </p>
 
+                <div class="explanation">
+                  <h4>Simple example:</h4>
+
+                  <p>
+                    Oka extra variable matrame create chesthe, input entha
+                    perigina extra memory almost same.
+                  </p>
+
+                  <div class="example-box">
+                    <code>
+                      let sum = 0;
+                      <br />
+                      let count = 0;
+                    </code>
+
+                    <p>
+                      Extra variables fixed →
+                      <strong>O(1) Space</strong>
+                    </p>
+                  </div>
+
+                  <p class="small-note">
+                    Time = entha work?
+                    <br />
+                    Space = entha extra memory?
+                  </p>
+                </div>
+              </div>
+            </article>
+
+            <!-- VARIABLES -->
+
+            <article class="concept-card">
+              <div class="concept-number">03</div>
+
+              <div class="concept-content">
+                <p class="concept-label">FOUNDATION</p>
+
+                <h3>Variables</h3>
+
+                <p class="concept-simple">
+                  Data ni temporarily store cheyyadaniki variables use chestham.
+                </p>
+
+                <div class="mini-example">
+                  <code>
+                    let age = 21;
+                    <br />
+                    let name = "Karthik";
+                  </code>
+                </div>
+
+                <p class="concept-tip">
+                  First variables clear ga ardham cheskovali. DSA lo everywhere
+                  use avuthayi.
+                </p>
+              </div>
+            </article>
+
+            <!-- LOOPS -->
+
+            <article class="concept-card">
+              <div class="concept-number">04</div>
+
+              <div class="concept-content">
+                <p class="concept-label">FOUNDATION</p>
+
+                <h3>Loops</h3>
+
+                <p class="concept-simple">
+                  Same work ni multiple times cheyyali ante loops use chestham.
+                </p>
+
+                <div class="mini-example">
+                  <code>
+                    for (let i = 0; i &lt; n; i++) {
+                    <br />
+                    &nbsp;&nbsp;console.log(i);
+                    <br />
+                    }
+                  </code>
+                </div>
+
+                <p class="concept-tip">
+                  Loop count chudatam → Time Complexity understand cheyyadaniki
+                  first step.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <!-- ================= LEARNING RULE ================= -->
+
+          <div class="learning-rule">
+            <div>
+              <p class="eyebrow">GOLDEN RULE</p>
+
+              <h3>Don't memorize first. Understand first.</h3>
             </div>
 
-        </section>
+            <p>
+              Concept enti?
+              <br />
+              Enduku use chestham?
+              <br />
+              Eppudu use chestham?
+              <br />
+              Simple example enti?
+              <br />
+              Tarvatha problem solve cheyyali.
+            </p>
+          </div>
+        </div>
+      </section>
 
+      <!-- ================= DSA FLOW ================= -->
 
+      <section class="section flow-section">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">02 — HOW TO LEARN</p>
+
+              <h2>
+                One simple<br />
+                learning flow.
+              </h2>
+            </div>
+
+            <p>
+              Every DSA topic ni same process tho learn cheyyali. Appudu
+              confusion thaggutundi.
+            </p>
+          </div>
+
+          <div class="flow-grid">
+            <article class="flow-card">
+              <span>01</span>
+
+              <h3>Concept</h3>
+
+              <p>
+                Asalu concept enti? Very simple language lo understand cheyyi.
+              </p>
+            </article>
+
+            <article class="flow-card">
+              <span>02</span>
+
+              <h3>Why?</h3>
+
+              <p>Ee concept enduku use chestham? Real problem enti?</p>
+            </article>
+
+            <article class="flow-card">
+              <span>03</span>
+
+              <h3>Example</h3>
+
+              <p>Small example tho manually dry run cheyyi.</p>
+            </article>
+
+            <article class="flow-card">
+              <span>04</span>
+
+              <h3>Pattern</h3>
+
+              <p>
+                Similar problems anni same pattern follow chestunnaya? Identify
+                cheyyi.
+              </p>
+            </article>
+
+            <article class="flow-card">
+              <span>05</span>
+
+              <h3>Problems</h3>
+
+              <p>First easy problems. Tarvatha medium. Finally hard.</p>
+            </article>
+
+            <article class="flow-card">
+              <span>06</span>
+
+              <h3>Revision</h3>
+
+              <p>Mistakes note chesi, malli same concept ni revise cheyyi.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= SYLLABUS ================= -->
+
+      <section class="section" id="syllabus">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">03 — LEARNING PATH</p>
+
+              <h2>DSA Syllabus</h2>
+            </div>
+
+            <p>
+              Random ga problems solve cheyyakunda, step-by-step order lo learn
+              cheddam.
+            </p>
+          </div>
+
+          <div class="syllabus-grid">
+            <a href="foundation.html" class="topic-card completed">
+              <div class="topic-number">01</div>
+
+              <div class="topic-content">
+                <h3>Foundations</h3>
+                <p>Complexity, arrays, basic problem solving.</p>
+
+                <div class="topic-progress">
+                  <span>8 / 8</span>
+                  <span>100%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div class="small-progress-fill" style="width: 100%"></div>
+                </div>
+              </div>
+            </a>
+
+            <a
+              href="arrays.html"
+              class="topic-card"
+              aria-label="Open Arrays learning page"
+            >
+              <div class="topic-number">02</div>
+
+              <div class="topic-content">
+                <h3>Arrays</h3>
+
+                <p>
+                  Learn arrays, indexing, traversal, searching, two pointers,
+                  prefix sums and core patterns.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 12 checkpoints</span>
+
+                  <div class="small-progress">
+                    <span style="width: 0%"></span>
+                  </div>
+                </div>
+              </div>
+            </a>
+
+            <article class="topic-card">
+              <div class="topic-number">03</div>
+
+              <div class="topic-content">
+                <p class="topic-status">NEXT</p>
+
+                <h3>Arrays</h3>
+
+                <p>
+                  Traversal, searching, sorting basics, prefix sum and Kadane's
+                  algorithm.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 25</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-number">04</div>
+
+              <div class="topic-content">
+                <p class="topic-status">NEXT</p>
+
+                <h3>Strings</h3>
+
+                <p>
+                  Characters, frequency counting, substrings and basic string
+                  problems.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 18</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-number">05</div>
+
+              <div class="topic-content">
+                <p class="topic-status">PATTERN</p>
+
+                <h3>Two Pointers</h3>
+
+                <p>
+                  Two indexes ni smart ga move chesi problem solve cheyyadam.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 15</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-number">06</div>
+
+              <div class="topic-content">
+                <p class="topic-status">PATTERN</p>
+
+                <h3>Sliding Window</h3>
+
+                <p>
+                  Continuous subarray or substring problems ni efficiently solve
+                  cheyyadam.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 15</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-number">07</div>
+
+              <div class="topic-content">
+                <p class="topic-status">CORE DSA</p>
+
+                <h3>Linked List</h3>
+
+                <p>Nodes, pointers, traversal, reversal and cycle problems.</p>
+
+                <div class="topic-progress">
+                  <span>0 / 15</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card">
+              <div class="topic-number">08</div>
+
+              <div class="topic-content">
+                <p class="topic-status">CORE DSA</p>
+
+                <h3>Binary Search</h3>
+
+                <p>
+                  Search space ni half-half ga reduce chesi answer find
+                  cheyyadam.
+                </p>
+
+                <div class="topic-progress">
+                  <span>0 / 15</span>
+                  <span>0%</span>
+                </div>
+
+                <div class="small-progress">
+                  <div style="width: 0%"></div>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card locked">
+              <div class="topic-number">09</div>
+
+              <div class="topic-content">
+                <p class="topic-status">LATER</p>
+
+                <h3>Stack & Queue</h3>
+
+                <p>LIFO, FIFO and common interview patterns.</p>
+
+                <div class="topic-progress">
+                  <span>Locked</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card locked">
+              <div class="topic-number">10</div>
+
+              <div class="topic-content">
+                <p class="topic-status">LATER</p>
+
+                <h3>Trees</h3>
+
+                <p>Binary trees, DFS, BFS and tree traversal patterns.</p>
+
+                <div class="topic-progress">
+                  <span>Locked</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card locked">
+              <div class="topic-number">11</div>
+
+              <div class="topic-content">
+                <p class="topic-status">LATER</p>
+
+                <h3>Graphs</h3>
+
+                <p>Nodes, edges, BFS, DFS and shortest path basics.</p>
+
+                <div class="topic-progress">
+                  <span>Locked</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="topic-card locked">
+              <div class="topic-number">12</div>
+
+              <div class="topic-content">
+                <p class="topic-status">LATER</p>
+
+                <h3>Dynamic Programming</h3>
+
+                <p>States, choices, transitions, memoization and tabulation.</p>
+
+                <div class="topic-progress">
+                  <span>Locked</span>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PATTERNS ================= -->
+
+      <section class="section dark-section" id="patterns">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">04 — PATTERN LIBRARY</p>
+
+              <h2>Think in patterns.</h2>
+            </div>
+
+            <p>
+              500 solutions memorize cheyyadam goal kaadu. Problem chusi pattern
+              identify cheyyadam goal.
+            </p>
+          </div>
+
+          <div class="pattern-grid">
+            <article class="pattern-card">
+              <span>01</span>
+
+              <h3>Constant Window</h3>
+
+              <p>
+                Fixed size window. Example: every 3 elements ni consider
+                cheyyali.
+              </p>
+            </article>
+
+            <article class="pattern-card">
+              <span>02</span>
+
+              <h3>Longest Window</h3>
+
+              <p>
+                Condition satisfy chestunna longest continuous range find
+                cheyyali.
+              </p>
+            </article>
+
+            <article class="pattern-card">
+              <span>03</span>
+
+              <h3>Count Windows</h3>
+
+              <p>
+                Condition satisfy chestunna total subarrays/substrings count
+                cheyyali.
+              </p>
+            </article>
+
+            <article class="pattern-card">
+              <span>04</span>
+
+              <h3>Minimum Window</h3>
+
+              <p>
+                Valid condition satisfy chestunna smallest range find cheyyali.
+              </p>
+            </article>
+
+            <article class="pattern-card">
+              <span>05</span>
+
+              <h3>Two Pointers</h3>
+
+              <p>
+                Two indexes ni intelligent ga move chesi work reduce cheyyali.
+              </p>
+            </article>
+
+            <article class="pattern-card">
+              <span>06</span>
+
+              <h3>Binary Search</h3>
+
+              <p>Search space ni repeatedly half chesi answer find cheyyali.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PROBLEMS ================= -->
+
+      <section class="section" id="problems">
+        <div class="container">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">05 — PRACTICE</p>
+
+              <h2>Problem Tracker</h2>
+            </div>
+
+            <p>
+              Problem solve chesava? Why solution works ani kuda understand
+              chesava?
+            </p>
+          </div>
+
+          <div class="problem-list">
+            <article class="problem-row">
+              <div class="problem-status pending">01</div>
+
+              <div class="problem-info">
+                <h3>Find the Largest Element</h3>
+
+                <div class="problem-meta">
+                  <span>Arrays</span>
+                  <span>Easy</span>
+                  <span>Beginner</span>
+                </div>
+              </div>
+
+              <div class="problem-action">Not Started</div>
+            </article>
+
+            <article class="problem-row">
+              <div class="problem-status pending">02</div>
+
+              <div class="problem-info">
+                <h3>Find the Smallest Element</h3>
+
+                <div class="problem-meta">
+                  <span>Arrays</span>
+                  <span>Easy</span>
+                  <span>Beginner</span>
+                </div>
+              </div>
+
+              <div class="problem-action">Not Started</div>
+            </article>
+
+            <article class="problem-row">
+              <div class="problem-status pending">03</div>
+
+              <div class="problem-info">
+                <h3>Reverse an Array</h3>
+
+                <div class="problem-meta">
+                  <span>Arrays</span>
+                  <span>Easy</span>
+                  <span>Two Pointers</span>
+                </div>
+              </div>
+
+              <div class="problem-action">Not Started</div>
+            </article>
+
+            <article class="problem-row">
+              <div class="problem-status pending">04</div>
+
+              <div class="problem-info">
+                <h3>Maximum Points You Can Obtain from Cards</h3>
+
+                <div class="problem-meta">
+                  <span>Sliding Window</span>
+                  <span>Medium</span>
+                  <span>LeetCode</span>
+                </div>
+              </div>
+
+              <div class="problem-action">Later</div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= REVISION ================= -->
+
+      <section class="section revision-section" id="revision">
+        <div class="container">
+          <div class="revision-layout">
+            <div>
+              <p class="eyebrow">06 — REVISION</p>
+
+              <h2>
+                Learn once.<br />
+                Remember forever.
+              </h2>
+
+              <p class="section-description">
+                DSA lo just solve chesi move on avvakudadhu. Important concepts
+                ni repeated ga revise cheyyali.
+              </p>
+            </div>
+
+            <div class="revision-card">
+              <div class="revision-header">
+                <h3>Today's Revision</h3>
+
+                <span> Start from basics </span>
+              </div>
+
+              <div class="revision-item">
+                <span class="revision-icon"> 01 </span>
+
+                <div>
+                  <h4>Time Complexity</h4>
+
+                  <p>O(1), O(n), O(n²)</p>
+                </div>
+
+                <span> → </span>
+              </div>
+
+              <div class="revision-item">
+                <span class="revision-icon"> 02 </span>
+
+                <div>
+                  <h4>Space Complexity</h4>
+
+                  <p>Extra memory basics</p>
+                </div>
+
+                <span> → </span>
+              </div>
+
+              <div class="revision-item">
+                <span class="revision-icon"> 03 </span>
+
+                <div>
+                  <h4>Loops</h4>
+
+                  <p>Count how many times they run</p>
+                </div>
+
+                <span> → </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= MISTAKE BOOK ================= -->
+
+      <section class="section">
+        <div class="container">
+          <div class="mistake-box">
+            <div>
+              <p class="eyebrow">07 — MISTAKE BOOK</p>
+
+              <h2>
+                Mistakes ni<br />
+                save cheyyi.
+              </h2>
+
+              <p>
+                Wrong answer vachindha? Solution chudakunda mundu mistake enti
+                ani identify cheyyi.
+              </p>
+            </div>
+
+            <div class="mistake-example">
+              <div class="mistake-top">
+                <span> Time Complexity </span>
+
+                <span> Revision #1 </span>
+              </div>
+
+              <h3>Nested loop ni O(n) anukunna.</h3>
+
+              <p>
+                Two loops independently run avvatledu. One loop inside another
+                loop undi. So total work n × n = O(n²).
+              </p>
+
+              <div class="mistake-footer">
+                <span> Lesson learned </span>
+
+                <strong> Count loops carefully </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= FINAL MESSAGE ================= -->
+
+      <section class="section final-section">
+        <div class="container">
+          <p class="eyebrow">REMEMBER</p>
+
+          <h2>
+            DSA is not about<br />
+            being naturally smart.
+          </h2>
+
+          <p class="final-description">
+            First basics understand cheyyi. Then patterns recognize cheyyi.
+            Problems solve cheyyi. Mistakes nunchi learn avvu. Daily little
+            progress is enough.
+          </p>
+        </div>
+      </section>
     </main>
-
 
     <!-- ================= FOOTER ================= -->
 
     <footer class="footer">
+      <div class="container footer-content">
+        <div>
+          <a href="#" class="logo"> DSA<span>Master</span> </a>
 
-        <div class="container footer-content">
-
-            <div>
-
-                <a href="#" class="logo">
-                    DSA<span>Master</span>
-                </a>
-
-                <p>
-                    Built for learning. Built for consistency.
-                </p>
-
-            </div>
-
-            <p>
-                One concept at a time.
-            </p>
-
+          <p>Built for learning. Built for consistency.</p>
         </div>
 
+        <p>One concept at a time.</p>
+      </div>
     </footer>
-
-
-</body>
+  </body>
 </html>
